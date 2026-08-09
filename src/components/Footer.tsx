@@ -83,6 +83,17 @@ export function Footer() {
               </li>
             ))}
           </ul>
+          <p className="text-[13px] text-white/40">
+            Ontwikkeld door{" "}
+            <a
+              href="https://www.blablabuild.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/55 underline-offset-4 transition-colors hover:text-green-light hover:underline"
+            >
+              blablabuild
+            </a>
+          </p>
         </div>
 
         <p
