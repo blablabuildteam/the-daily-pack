@@ -77,13 +77,13 @@ export function Header() {
                 {item.label}
               </Link>
               {activeMenu === item.label && (
-                <div className="absolute left-1/2 top-full z-50 min-w-[200px] -translate-x-1/2 pt-3">
-                  <div className="border border-ink/8 bg-white py-2 shadow-[0_12px_40px_rgba(28,28,26,0.08)]">
+                <div className="absolute left-1/2 top-full z-50 min-w-[210px] -translate-x-1/2 pt-3">
+                  <div className="overflow-hidden rounded-2xl border border-ink/8 bg-white py-2 shadow-[0_12px_40px_rgba(28,28,26,0.08)]">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-4 py-2.5 text-[14px] text-ink/80 transition-colors hover:bg-beige-1 hover:text-green"
+                        className="mx-2 block rounded-xl px-4 py-2.5 text-[14px] text-ink/80 transition-colors hover:bg-beige-1 hover:text-green"
                       >
                         {child.label}
                       </Link>

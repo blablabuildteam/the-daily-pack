@@ -99,8 +99,8 @@ export default function HomePage() {
             </Button>
             <Button
               href="/hoe-het-werkt/werkwijze"
-              variant="ghost"
-              className="!text-white hover:!text-green-light"
+              variant="secondary"
+              className="!border-white/70 !text-white hover:!border-white hover:!bg-white/10 hover:!text-white"
             >
               Ontdek hoe het werkt
             </Button>
@@ -174,20 +174,15 @@ export default function HomePage() {
       {/* ---------- 3. Instagram — Thema 5 ---------- */}
       <section className="theme-5">
         <div className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
-          <Reveal className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <p className="eyebrow mb-6 text-green">Instagram</p>
-              <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
-                De roedel <em>op pad</em>
-              </h2>
-              <p className="mt-4 max-w-md text-[16px] text-ink/70">
-                De laatste avonturen, foto&apos;s en video&apos;s op onze
-                Instagram.
-              </p>
-            </div>
-            <Button href={site.instagram} variant="secondary" external>
-              Bezoek onze Instagram
-            </Button>
+          <Reveal>
+            <p className="eyebrow mb-6 text-green">Instagram</p>
+            <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
+              De roedel <em>op pad</em>
+            </h2>
+            <p className="mt-4 max-w-md text-[16px] text-ink/70">
+              De laatste avonturen, foto&apos;s en video&apos;s op onze
+              Instagram.
+            </p>
           </Reveal>
 
           <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">

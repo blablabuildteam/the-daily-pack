@@ -185,20 +185,6 @@ em,
   border-color: var(--line);
 }
 
-/* ---------- Marquee ---------- */
-
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 36s linear infinite;
-}
-
 /* ---------- Reveal animaties ---------- */
 
 @keyframes fade-up {
@@ -235,10 +221,6 @@ em,
   }
 
   .animate-fade-up {
-    animation: none;
-  }
-
-  .marquee-track {
     animation: none;
   }
 }
