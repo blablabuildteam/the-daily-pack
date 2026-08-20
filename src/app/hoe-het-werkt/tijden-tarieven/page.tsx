@@ -8,35 +8,29 @@ import { Section } from "@/components/Section";
 export const metadata: Metadata = {
   title: "Tijden & Tarieven",
   description:
-    "Prijzen en beschikbare tijden van Pack Ronde, Eigen Ronde, Weekendpas en Kennismaking bij The Daily Pack Amsterdam-Noord.",
+    "Prijzen en beschikbare tijden van Pack Ronde, Eigen Ronde en Kennismaking bij The Daily Pack Amsterdam-Noord.",
 };
 
 const packPrices = [
-  { label: "Weekdagen (ma–vr)", value: "€30 per sessie · circa 1 uur en 45 minuten" },
-  { label: "Weekend (za–zo)", value: "€35 per sessie · circa 1 uur en 45 minuten" },
+  {
+    label: "Weekdagen (ma–vr)",
+    value: "€30 per sessie · circa 1 uur en 45 minuten",
+  },
   {
     label: "Losse sessie doordeweeks",
-    value: "€32 (geen abonnement, om gaten op te vullen)",
+    value: "€32 (geen abonnement)",
   },
 ];
 
 const eigenPrices = [
-  { label: "30 minuten", value: "€35 per sessie" },
-  {
-    label: "60 minuten",
-    value: "€60 per sessie (30 min + €25 voor het extra half uur)",
-  },
+  { label: "30 minuten", value: "€30 per sessie" },
+  { label: "60 minuten", value: "€55 per sessie" },
 ];
 
 const weekSlots = [
   "09:30–11:15 — Pack ronde, max 4 honden",
   "11:30–13:15 — Pack ronde, max 4 honden",
   "13:30–15:15 — Pack ronde, max 4 honden",
-  "Op afspraak — Eigen Ronde of Kennismaking",
-];
-
-const weekendSlots = [
-  "12:30–14:15 — Pack ronde, max 4 honden",
   "Op afspraak — Eigen Ronde of Kennismaking",
 ];
 
@@ -82,8 +76,8 @@ export default function TijdenTarievenPage() {
             vooruit betaald.
           </p>
           <p>
-            Inbegrepen: ophalen en thuisbrengen · wandeling · loopband ·
-            foto&apos;s en video&apos;s · Wandelverslag
+            Inbegrepen: ophalen en thuisbrengen · wandeling · loopband bij kou,
+            regen of energie · foto&apos;s en video&apos;s · Wandelverslag
           </p>
         </ContentBlock>
         <Reveal>
@@ -98,7 +92,8 @@ export default function TijdenTarievenPage() {
         <ContentBlock title="Eigen Ronde">
           <p>
             Privésessie voor één adres, op afspraak en beschikbaarheid. Wandelen
-            in het park of bos en loopband. Inclusief Wandelverslag.
+            in het park of bos, met de loopband als aanvulling. Inclusief
+            Wandelverslag.
           </p>
         </ContentBlock>
         <Reveal>
@@ -113,23 +108,6 @@ export default function TijdenTarievenPage() {
         </Reveal>
       </Section>
 
-      <Section theme={5}>
-        <ContentBlock title="Weekendpas">
-          <p>
-            Geen vast abonnement nodig. Dezelfde pack ronde, maar dan zonder
-            vaste verplichting. Geschikt voor een sessie op zaterdag of zondag,
-            op beschikbaarheid.
-          </p>
-        </ContentBlock>
-        <Reveal>
-          <PriceList
-            items={[
-              { label: "Losse weekendsessie", value: "€38" },
-            ]}
-          />
-        </Reveal>
-      </Section>
-
       <Section theme={2} grain>
         <ContentBlock title="Kennismaking">
           <p>
@@ -137,10 +115,7 @@ export default function TijdenTarievenPage() {
             persoonlijke ontmoeting van 30 minuten. We leren de hond kennen en
             bespreken de wensen.
           </p>
-          <p>
-            Verplicht voor Pack Ronde. Niet vereist voor Eigen Ronde. Op
-            afspraak.
-          </p>
+          <p>Verplicht voor alle diensten, eenmalig. Op afspraak.</p>
         </ContentBlock>
         <Reveal>
           <PriceList items={[{ label: "Eenmalig", value: "€20 per hond" }]} />
@@ -150,33 +125,18 @@ export default function TijdenTarievenPage() {
       <Section theme={1}>
         <Reveal>
           <h2 className="mb-8">Wanneer zijn we beschikbaar?</h2>
-          <div className="grid gap-10 md:grid-cols-2">
-            <div>
-              <h3 className="mb-4 text-[20px]">Weekdagen</h3>
-              <ul className="space-y-3">
-                {weekSlots.map((slot) => (
-                  <li
-                    key={slot}
-                    className="border-l-2 border-green pl-4 text-[15px] text-ink/80"
-                  >
-                    {slot}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 text-[20px]">Weekend</h3>
-              <ul className="space-y-3">
-                {weekendSlots.map((slot) => (
-                  <li
-                    key={slot}
-                    className="border-l-2 border-green pl-4 text-[15px] text-ink/80"
-                  >
-                    {slot}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div>
+            <h3 className="mb-4 text-[20px]">Weekdagen</h3>
+            <ul className="max-w-xl space-y-3">
+              {weekSlots.map((slot) => (
+                <li
+                  key={slot}
+                  className="border-l-2 border-green pl-4 text-[15px] text-ink/80"
+                >
+                  {slot}
+                </li>
+              ))}
+            </ul>
           </div>
           <p className="mt-10 text-[14px] text-muted">
             Op officiële feestdagen is The Daily Pack gesloten, tenzij anders

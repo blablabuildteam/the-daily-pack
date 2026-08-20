@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/Button";
 import { ContentBlock } from "@/components/ContentBlock";
 import { CtaBlock } from "@/components/CtaBlock";
 import { PageHero } from "@/components/PageHero";
@@ -10,13 +9,13 @@ import { Section } from "@/components/Section";
 export const metadata: Metadata = {
   title: "Pack Ronde",
   description:
-    "De dagelijkse uitlaatservice van The Daily Pack in Amsterdam-Noord. Vaste dag, vast tijdslot, kleine groepen. Wandelen én loopband.",
+    "De dagelijkse uitlaatservice van The Daily Pack in Amsterdam-Noord. Vaste dag, vast tijdslot, kleine groepen.",
 };
 
 const included = [
   "Ophalen en thuisbrengen",
   "Wandeling in het park of bos",
-  "Loopband sessie",
+  "Loopband bij kou, regen of energie",
   "Foto's en video's",
   "Wandelverslag na elke sessie",
 ];
@@ -37,15 +36,15 @@ export default function PackRondePage() {
       <Section theme={2} grain>
         <ContentBlock title="De dagelijkse opbouw">
           <p>
-            Elke werkdag gaan we in meerdere rondes met kleine groepen op pad,
-            en in het weekend één ronde per dag. Elke hond heeft een vast
-            tijdslot. Waar mogelijk werken we met een vaste groep. Dat geeft de
-            dieren rust en herkenning.
+            Elke werkdag gaan we in meerdere rondes met kleine groepen op pad.
+            Elke hond heeft een vast tijdslot. Waar mogelijk werken we met een
+            vaste groep. Dat geeft de dieren rust en herkenning.
           </p>
           <p>
             Een volledige sessie duurt ongeveer{" "}
             <strong>1 uur en 45 minuten</strong>: ophalen, wandeling in het park
-            of bos, loopband en thuisbrengen.
+            of bos en, bij kou, regen of veel energie, de loopband, en
+            thuisbrengen.
           </p>
         </ContentBlock>
       </Section>
@@ -102,15 +101,16 @@ export default function PackRondePage() {
       <Section theme={2} grain>
         <ContentBlock title="Liever geen abonnement?">
           <p>
-            Dezelfde pack ronde, maar dan zonder vaste verplichting. Heb je in
-            het weekend een afspraak buiten de deur of ben je druk met visite
-            bezig? De Weekendpas geeft toegang tot de pack ronde op zaterdag of
-            zondag, op beschikbaarheid.
+            Dezelfde Pack Ronde, maar dan zonder vaste verplichting. Boek een
+            losse sessie wanneer het jou uitkomt — €32.
           </p>
           <p className="pt-2">
-            <Button href="/hoe-het-werkt/tijden-tarieven" variant="secondary">
-              Bekijk de Weekendpas
-            </Button>
+            <Link
+              href="/hoe-het-werkt/tijden-tarieven"
+              className="text-[14px] font-medium text-green underline-offset-4 hover:underline"
+            >
+              Bekijk tijden en tarieven
+            </Link>
           </p>
         </ContentBlock>
       </Section>

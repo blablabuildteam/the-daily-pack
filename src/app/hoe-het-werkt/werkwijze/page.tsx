@@ -23,7 +23,7 @@ const sessionSteps = [
   },
   {
     title: "Loopband",
-    text: "Terug in de bus is het tijd voor de loopband. Dit doen we ná de wandeling, als de hond al warm en ontspannen is. Zo raakt de hond op een veilige, gecontroleerde manier de laatste energie kwijt. Tempo en duur passen we aan op wat de hond aankan.",
+    text: "Bij kou, regen of veel energie is er terug in de bus tijd voor de loopband. Dit doen we ná de wandeling, als de hond al warm en ontspannen is. Zo raakt de hond op een veilige, gecontroleerde manier de laatste energie kwijt. Tempo en duur passen we aan op wat de hond aankan.",
   },
   {
     title: "Thuisbrengen",
@@ -103,11 +103,9 @@ export default function WerkwijzePage() {
       <Section theme={5}>
         <ContentBlock title="De loopband">
           <p>
-            De loopband is een onderdeel van elke sessie. Geschikt voor alle
-            honden met een maximale schofthoogte van 60 cm. Een waardevolle
-            aanvulling op de wandeling voor extra beweging en focus. Ook bij kou
-            of regen kan de hond zo alsnog energie kwijt. Altijd begeleid, altijd
-            op het tempo van de hond.
+            De loopband is geen vast onderdeel, maar een waardevolle aanvulling
+            op de wandeling — bij kou, regen of veel energie. Geschikt voor alle
+            honden met een maximale schofthoogte van 60 cm.
           </p>
           <p>
             <Link href="/over-ons/loopband">Meer over de loopband</Link>

@@ -74,7 +74,7 @@ export default function LoopbandPage() {
             Klaar om <em>te starten?</em>
           </>
         }
-        text="Begin met een Kennismaking, de eerste stap voor de Pack Ronde en Weekendpas."
+        text="Begin met een Kennismaking, de eerste stap voor elke dienst."
       />
     </>
   );

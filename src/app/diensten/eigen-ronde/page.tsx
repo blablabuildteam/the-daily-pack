@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Eigen Ronde",
   description:
-    "Privésessie voor één adres in Amsterdam-Noord. Wandelen en loopband op afspraak, zonder abonnement. Maximaal twee honden.",
+    "Privésessie voor één adres in Amsterdam-Noord. Wandelen met loopband als aanvulling, op afspraak. Maximaal twee honden.",
 };
 
 export default function EigenRondePage() {
@@ -22,7 +22,7 @@ export default function EigenRondePage() {
             Een sessie <em>op maat.</em>
           </>
         }
-        intro="Eigen Ronde is een privésessie voor één adres. Wandelen in het park of bos en stoom afblazen op de loopband. Op afspraak en beschikbaarheid. Geen abonnement nodig."
+        intro="Eigen Ronde is een privésessie voor één adres. Wandelen in het park of bos, met de loopband als aanvulling bij kou, regen of veel energie. Op afspraak en beschikbaarheid. Geen abonnement nodig."
       />
 
       <Section theme={2} grain>
@@ -45,8 +45,9 @@ export default function EigenRondePage() {
       <Section theme={1}>
         <ContentBlock title="Hoe ziet het eruit?">
           <p>
-            Ophalen, wandelen, loopband en weer terugbrengen. Net als bij de
-            Pack Ronde, maar dan alleen voor jouw hond.
+            Ophalen, wandelen, loopband (bij kou, regen of veel energie) en weer
+            terugbrengen. Net als bij de Pack Ronde, maar dan alleen voor jouw
+            hond.
           </p>
         </ContentBlock>
       </Section>

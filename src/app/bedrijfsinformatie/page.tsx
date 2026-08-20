@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
 import { site } from "@/lib/site";
@@ -34,19 +35,25 @@ export default function BedrijfsinformatiePage() {
               E-mail
             </dt>
             <dd className="mt-1">
-              <a href={site.emailHref} className="text-green underline-offset-4 hover:underline">
+              <a
+                href={site.emailHref}
+                className="text-green underline-offset-4 hover:underline"
+              >
                 {site.email}
               </a>
             </dd>
           </div>
           <div>
             <dt className="text-[12px] uppercase tracking-[0.14em] text-muted">
-              Telefoon
+              Contact
             </dt>
             <dd className="mt-1">
-              <a href={site.phoneHref} className="text-green underline-offset-4 hover:underline">
-                {site.phone}
-              </a>
+              <Link
+                href="/contact"
+                className="text-green underline-offset-4 hover:underline"
+              >
+                Contactformulier
+              </Link>
             </dd>
           </div>
         </dl>

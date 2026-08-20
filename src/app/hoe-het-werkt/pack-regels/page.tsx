@@ -100,7 +100,7 @@ export default function PackRegelsPage() {
       <Section theme={5}>
         <ContentBlock title="Planning en Annulering">
           <p>
-            Voor Eigen Ronde en Weekendpas geldt: afmelden meer dan 24 uur van
+            Voor Eigen Ronde geldt: afmelden meer dan 24 uur van
             tevoren betekent de sessie inhalen binnen enkele weken. Afmelden
             binnen 24 uur vervalt de sessie, zonder inhalen.
           </p>

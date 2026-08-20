@@ -4,7 +4,7 @@ const items = [
   { label: "Ophalen & thuisbrengen", className: "hidden md:flex" },
   { label: "Elektrische bus", className: "hidden lg:flex" },
   { label: "Amsterdam-Noord", className: "hidden sm:flex" },
-  { label: "7 dagen per week", className: "" },
+  { label: "GPS-tracker", className: "" },
 ];
 
 export function Marquee() {
