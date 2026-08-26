@@ -3,10 +3,13 @@
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { Logo } from "@/components/Logo";
+import { useLocale } from "@/lib/i18n/locale-context";
 import { site } from "@/lib/site";
 
 export function ComingSoonForm() {
   const router = useRouter();
+  const { p } = useLocale();
+  const { comingSoon } = p;
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -45,28 +48,28 @@ export function ComingSoonForm() {
         </div>
 
         <p className="eyebrow mx-auto mb-5 justify-center text-green">
-          Amsterdam-Noord
+          {comingSoon.eyebrow}
         </p>
 
         <h1 className="text-[clamp(2.4rem,6vw,3.5rem)] leading-[1.05]">
-          Coming <em>soon</em>
+          {comingSoon.titleBefore}
+          <em>{comingSoon.titleEm}</em>
         </h1>
 
         <p className="mx-auto mt-5 max-w-sm text-[16px] leading-relaxed text-ink/70">
-          De nieuwe website van {site.name} is bijna klaar. Voor een sneak peek,
-          vul het wachtwoord in.
+          {comingSoon.intro}
         </p>
 
         <form onSubmit={onSubmit} className="mx-auto mt-10 max-w-xs text-left">
           <label htmlFor="password" className="sr-only">
-            Wachtwoord
+            {comingSoon.passwordLabel}
           </label>
           <input
             id="password"
             type="password"
             name="password"
             autoComplete="current-password"
-            placeholder="Wachtwoord"
+            placeholder={comingSoon.passwordPlaceholder}
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
@@ -77,7 +80,7 @@ export function ComingSoonForm() {
 
           {error ? (
             <p className="mt-3 text-center text-[13px] text-red-700">
-              Onjuist wachtwoord. Probeer opnieuw.
+              {comingSoon.error}
             </p>
           ) : null}
 
@@ -86,7 +89,7 @@ export function ComingSoonForm() {
             disabled={loading || !password}
             className="mt-4 w-full rounded-full bg-green px-6 py-3.5 text-[14px] font-medium text-white transition-colors hover:bg-green-dark disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {loading ? "Even geduld…" : "Bekijk de site"}
+            {loading ? comingSoon.loading : comingSoon.submit}
           </button>
         </form>
 
@@ -104,7 +107,7 @@ export function ComingSoonForm() {
             rel="noopener noreferrer"
             className="transition-colors hover:text-green"
           >
-            Instagram
+            {comingSoon.instagramLabel}
           </a>
         </p>
       </div>

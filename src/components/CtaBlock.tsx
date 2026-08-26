@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { useLocale } from "@/lib/i18n/locale-context";
 import { site } from "@/lib/site";
 import { Button } from "./Button";
 import { Reveal } from "./Reveal";
@@ -14,9 +17,12 @@ type Props = {
 export function CtaBlock({
   title,
   text,
-  buttonLabel = "Boek een Kennismaking",
+  buttonLabel,
   href = site.collar.kennismaking,
 }: Props) {
+  const { t } = useLocale();
+  const label = buttonLabel ?? t.common.bookIntro;
+
   return (
     <section className="theme-3 grain relative overflow-hidden">
       <Image
@@ -37,7 +43,7 @@ export function CtaBlock({
           ) : null}
           <div className="mt-9">
             <Button href={href} variant="on-green">
-              {buttonLabel}
+              {label}
             </Button>
           </div>
         </Reveal>

@@ -6,7 +6,13 @@ import { footerLegal, nav, site } from "@/lib/site";
 import { Logo } from "./Logo";
 
 export function Footer() {
-  const { t } = useLocale();
+  const { t, p } = useLocale();
+
+  const legalLabelsByHref: Record<string, string> = {
+    "/algemene-voorwaarden": p.legalLabels.terms,
+    "/privacy": p.legalLabels.privacy,
+    "/bedrijfsinformatie": p.legalLabels.company,
+  };
 
   const navLabels: Record<string, string> = {
     Diensten: t.nav.services,
@@ -103,7 +109,7 @@ export function Footer() {
                   href={item.href}
                   className="text-[13px] text-white/50 transition-colors hover:text-green-light"
                 >
-                  {item.label}
+                  {legalLabelsByHref[item.href] ?? item.label}
                 </Link>
               </li>
             ))}

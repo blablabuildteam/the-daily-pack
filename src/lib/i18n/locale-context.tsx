@@ -16,10 +16,12 @@ import {
   type Dictionary,
   type Locale,
 } from "./dictionaries";
+import { getPageContent, type PageContent } from "./page-content";
 
 type LocaleContextValue = {
   locale: Locale;
   t: Dictionary;
+  p: PageContent;
   setLocale: (locale: Locale) => void;
 };
 
@@ -27,7 +29,9 @@ const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 function readCookie(): Locale {
   if (typeof document === "undefined") return DEFAULT_LOCALE;
-  const match = document.cookie.match(new RegExp(`(?:^|; )${LOCALE_COOKIE}=([^;]*)`));
+  const match = document.cookie.match(
+    new RegExp(`(?:^|; )${LOCALE_COOKIE}=([^;]*)`),
+  );
   const value = match?.[1];
   return value === "en" ? "en" : "nl";
 }
@@ -37,6 +41,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     setLocaleState(readCookie());
+    document.documentElement.lang = readCookie();
   }, []);
 
   const setLocale = useCallback((next: Locale) => {
@@ -49,6 +54,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     () => ({
       locale,
       t: dictionaries[locale],
+      p: getPageContent(locale),
       setLocale,
     }),
     [locale, setLocale],

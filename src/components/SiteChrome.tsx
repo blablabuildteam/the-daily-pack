@@ -10,15 +10,17 @@ export function SiteChrome({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const isComingSoon = pathname === "/coming-soon";
 
-  if (isComingSoon) {
-    return <>{children}</>;
-  }
-
   return (
     <LocaleProvider>
-      <Header />
-      <main className="flex-1">{children}</main>
-      <Footer />
+      {isComingSoon ? (
+        children
+      ) : (
+        <>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </>
+      )}
     </LocaleProvider>
   );
 }
