@@ -24,6 +24,7 @@ export function Footer() {
     "Pack Regels": t.nav.packRegels,
     "The Daily Pack": t.nav.aboutTdp,
     Loopband: t.nav.loopband,
+    Blog: t.nav.blog,
   };
 
   return (
@@ -42,7 +43,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-white/65">
-              Premium Dog Service · Amsterdam-Noord
+              Premium Hondenservice · Amsterdam-Noord
             </p>
             <div className="mt-7 space-y-2.5 text-[14px]">
               <a

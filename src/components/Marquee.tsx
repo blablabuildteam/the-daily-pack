@@ -1,10 +1,10 @@
 const items = [
-  { label: "Wandelen én loopband", className: "" },
+  { label: "Wandelen in het park of bos", className: "hidden lg:flex" },
   { label: "Kleine groepen", className: "" },
-  { label: "Ophalen & thuisbrengen", className: "hidden md:flex" },
-  { label: "Elektrische bus", className: "hidden lg:flex" },
-  { label: "Amsterdam-Noord", className: "hidden sm:flex" },
+  { label: "Ophalen en thuisbrengen", className: "hidden md:flex" },
+  { label: "Elektrische bus", className: "hidden xl:flex" },
   { label: "GPS-tracker", className: "" },
+  { label: "Optionele loopband", className: "" },
 ];
 
 export function Marquee() {
@@ -24,7 +24,7 @@ export function Marquee() {
                 <circle cx="3" cy="3" r="3" fill="currentColor" opacity="0.55" />
               </svg>
             ) : null}
-            <span className="px-3 font-[family-name:var(--font-cormorant)] text-[clamp(14px,1.6vw,21px)] font-light italic tracking-wide md:px-5 lg:px-6">
+            <span className="px-3 font-[family-name:var(--font-cormorant)] text-[clamp(13px,1.45vw,20px)] font-light italic tracking-wide md:px-4 lg:px-5">
               {item.label}
             </span>
           </li>

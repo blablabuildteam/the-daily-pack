@@ -159,7 +159,7 @@ export function HomePageContent() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <span className="absolute bottom-4 left-4 translate-y-2 text-[13px] font-medium text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                    @thedailypack
+                    @thedailypack.dog
                   </span>
                 </a>
               </Reveal>
@@ -170,16 +170,18 @@ export function HomePageContent() {
 
       <section className="theme-2 grain">
         <div className="relative z-[1] mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-36">
-          <Reveal className="mb-16 flex flex-col items-start justify-between gap-6 md:mb-20 md:flex-row md:items-end">
+          <Reveal className="mb-16 md:mb-20">
             <div>
               <p className="eyebrow mb-6 text-green">{home.stepsEyebrow}</p>
               <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
                 {home.stepsTitleBefore} <em>{home.stepsTitleEm}</em>
               </h2>
+              <div className="mt-7">
+                <Button href="/hoe-het-werkt/werkwijze" variant="secondary">
+                  {home.moreInfo}
+                </Button>
+              </div>
             </div>
-            <Button href="/hoe-het-werkt/werkwijze" variant="secondary">
-              {home.moreInfo}
-            </Button>
           </Reveal>
 
           <div className="relative">

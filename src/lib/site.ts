@@ -10,7 +10,7 @@ export const site = {
   emailHref: "mailto:info@thedailypack.nl",
   instagram:
     process.env.NEXT_PUBLIC_INSTAGRAM_URL ??
-    "https://www.instagram.com/thedailypack/",
+    "https://www.instagram.com/thedailypack.dog/",
   collar: {
     book: collarBookUrl,
     kennismaking:
@@ -43,12 +43,8 @@ export const nav = [
     children: [
       { label: "The Daily Pack", href: "/over-ons" },
       { label: "Loopband", href: "/over-ons/loopband" },
+      { label: "Blog", href: "/blog" },
     ],
-  },
-  {
-    label: "Blog",
-    href: "/blog",
-    children: [] as { label: string; href: string }[],
   },
   {
     label: "Contact",

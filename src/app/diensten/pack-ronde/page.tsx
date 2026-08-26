@@ -92,8 +92,8 @@ export default function PackRondePage() {
             </Link>
           </p>
           <p className="mt-6 text-[14px] text-muted">
-            Kennismaking is verplicht voor deelname. Opzegtermijn 1
-            kalendermaand.
+            Kennismaking is verplicht voor deelname. Bij het abonnement geldt
+            een opzegtermijn van 1 kalendermaand.
           </p>
         </Reveal>
       </Section>
@@ -102,7 +102,7 @@ export default function PackRondePage() {
         <ContentBlock title="Liever geen abonnement?">
           <p>
             Dezelfde Pack Ronde, maar dan zonder vaste verplichting. Boek een
-            losse sessie wanneer het jou uitkomt — €32.
+            losse sessie wanneer het jou uitkomt.
           </p>
           <p className="pt-2">
             <Link

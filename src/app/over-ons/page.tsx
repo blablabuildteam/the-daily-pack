@@ -27,17 +27,16 @@ export default function OverOnsPage() {
       <Section theme={2} grain>
         <ContentBlock title="Hoe The Daily Pack ontstond">
           <p>
-            The Daily Pack ontstond vanuit een eenvoudige gedachte: een hond die
-            goed belast is, is een fijne hond thuis. Niet alleen een blokje om,
-            maar echte beweging, buiten zijn en de ruimte om stoom af te blazen.
-            Gecombineerd met de loopband zorgt elke sessie voor een voldane
-            hond, ook op drukke dagen of wanneer het weer minder is.
+            Het idee achter The Daily Pack is simpel: een hond die goed belast
+            is, is een fijne hond thuis. Geen kort blokje om, maar echte
+            beweging buiten, socialiseren en de ruimte om stoom af te blazen. Op
+            dagen dat je werkt of andere dingen te doen hebt, zit een goed
+            rondje er niet altijd in.
           </p>
           <p>
-            Wat begon met een kleine groep honden van vrienden en familie die
-            mee op pad gingen, groeide uit tot The Daily Pack. Een service voor
-            baasjes die het beste willen voor hun hond, zonder dat ze er zelf
-            altijd bij hoeven te zijn.
+            Wat begon met de honden van vrienden en familie, groeide uit tot een
+            service voor meer baasjes die het beste willen voor hun hond, zonder
+            dat ze er zelf altijd bij hoeven te zijn.
           </p>
         </ContentBlock>
       </Section>
@@ -47,11 +46,15 @@ export default function OverOnsPage() {
           <h2 className="mb-8">Het team</h2>
           <blockquote className="max-w-3xl border-l-2 border-green pl-6 md:pl-8">
             <p className="font-[family-name:var(--font-cormorant)] text-[clamp(1.5rem,3vw,2rem)] font-light italic leading-[1.35] text-ink">
-              &ldquo;Met twee energieke honden thuis weet ik als geen ander wat
-              een hond nodig heeft. Meer beweging, minder stress en een voldane
-              hond op de bank. Een voldane hond reageert ook minder op andere
-              honden en is rustiger in huis. Daarbij ook kleine groepen, want
-              een hond hoort meer buiten te lopen dan in de bus te zitten.&rdquo;
+              &ldquo;Met twee energieke honden thuis merk ik dagelijks hoe
+              belangrijk goede beweging is. Het zorgt voor een hond die zich
+              beter voelt, en dat zie je terug in het gedrag: minder stress,
+              rustiger thuis en minder reactief.
+            </p>
+            <p className="mt-5 font-[family-name:var(--font-cormorant)] text-[clamp(1.5rem,3vw,2rem)] font-light italic leading-[1.35] text-ink">
+              Daarbij werk ik bewust met kleine groepen: dat betekent kortere
+              tijd in de bus en meer aandacht voor iedere hond tijdens de
+              wandeling.&rdquo;
             </p>
             <footer className="mt-8">
               <p className="text-[16px] font-medium text-ink">Tim</p>

@@ -52,6 +52,7 @@ export function Header() {
     "Pack Regels": t.nav.packRegels,
     "The Daily Pack": t.nav.aboutTdp,
     Loopband: t.nav.loopband,
+    Blog: t.nav.blog,
   };
 
   return (

@@ -99,9 +99,9 @@ export default function TijdenTarievenPage() {
         <Reveal>
           <PriceList items={eigenPrices} />
           <p className="mt-6 text-[15px] text-ink/75">
-            Maximaal 2 honden. Bij 2 honden van hetzelfde adres:{" "}
+            Maximaal 2 honden. Tweede hond van hetzelfde adres:{" "}
             <strong className="font-medium text-ink">
-              25% korting op de hele rekening
+              50% korting op de tweede hond
             </strong>
             . Prijzen inclusief BTW.
           </p>
