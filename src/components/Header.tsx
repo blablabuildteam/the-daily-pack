@@ -133,7 +133,7 @@ export function Header() {
             className={`flex h-10 w-10 items-center justify-center ${
               solid ? "text-ink" : "text-white"
             }`}
-            aria-label={open ? "Menu sluiten" : "Menu openen"}
+            aria-label={open ? (locale === "en" ? "Close menu" : "Menu sluiten") : (locale === "en" ? "Open menu" : "Menu openen")}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
