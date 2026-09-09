@@ -27,7 +27,11 @@ export function ContactForm() {
         }),
       });
 
-      if (!res.ok) throw new Error("Failed");
+      const json = (await res.json().catch(() => null)) as {
+        ok?: boolean;
+      } | null;
+
+      if (!res.ok || !json?.ok) throw new Error("Failed");
       setStatus("success");
       form.reset();
     } catch {
@@ -37,6 +41,16 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="mx-auto mt-10 max-w-xl space-y-5">
+      {/* Honeypot */}
+      <input
+        type="text"
+        name="_honey"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden
+      />
+
       <div>
         <label
           htmlFor="name"
@@ -49,6 +63,7 @@ export function ContactForm() {
           name="name"
           type="text"
           required
+          autoComplete="name"
           className="w-full rounded-2xl border border-ink/15 bg-white px-5 py-3.5 text-[15px] outline-none transition-colors focus:border-green"
         />
       </div>
@@ -64,6 +79,7 @@ export function ContactForm() {
           name="email"
           type="email"
           required
+          autoComplete="email"
           className="w-full rounded-2xl border border-ink/15 bg-white px-5 py-3.5 text-[15px] outline-none transition-colors focus:border-green"
         />
       </div>

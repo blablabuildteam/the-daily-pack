@@ -63,118 +63,127 @@ export function Header() {
   };
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        solid
-          ? "border-b border-ink/8 bg-beige-1/95 backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 md:h-20 md:px-8">
-        <Link
-          href="/"
-          className="relative z-50 flex items-center gap-3"
-          onClick={() => setOpen(false)}
-          aria-label="The Daily Pack — home"
-        >
-          <Logo size={44} priority className="shrink-0" />
-          <span
-            className={`font-[family-name:var(--font-cormorant)] text-[22px] font-light tracking-tight transition-colors ${
-              solid ? "text-ink" : "text-white"
-            }`}
+    <header className="fixed inset-x-0 top-0 z-50">
+      {/* Blur only on the bar — not the drawer (backdrop-filter traps fixed children) */}
+      <div
+        className={`transition-all duration-300 ${
+          solid
+            ? "border-b border-ink/8 bg-beige-1/95 backdrop-blur-md"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 md:h-20 md:px-8">
+          <Link
+            href="/"
+            className="relative z-50 flex items-center gap-3"
+            onClick={() => setOpen(false)}
+            aria-label="The Daily Pack — home"
           >
-            The Daily Pack
-          </span>
-        </Link>
-
-        <nav className="hidden items-center gap-6 xl:gap-8 lg:flex">
-          {nav.map((item) => (
-            <div
-              key={item.label}
-              className="relative"
-              onMouseEnter={() =>
-                item.children.length > 0 ? setActiveMenu(item.label) : undefined
-              }
-              onMouseLeave={() => setActiveMenu(null)}
+            <Logo
+              size={44}
+              priority
+              className={`shrink-0 ${solid ? "" : "brightness-110 drop-shadow-[0_1px_8px_rgba(0,0,0,0.55)]"}`}
+            />
+            <span
+              className={`font-[family-name:var(--font-cormorant)] text-[22px] font-light tracking-tight transition-colors ${
+                solid ? "text-ink" : "text-white"
+              }`}
             >
-              <Link
-                href={item.href}
-                className={`text-[14px] transition-colors ${
-                  solid
-                    ? "text-ink/80 hover:text-green"
-                    : "text-white/90 hover:text-white"
-                }`}
-              >
-                {navLabels[item.label] ?? item.label}
-              </Link>
-              {item.children.length > 0 && activeMenu === item.label && (
-                <div className="absolute left-1/2 top-full z-50 min-w-[210px] -translate-x-1/2 pt-3">
-                  <div className="overflow-hidden rounded-2xl border border-ink/8 bg-white py-2 shadow-[0_12px_40px_rgba(28,28,26,0.08)]">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="mx-2 block rounded-xl px-4 py-2.5 text-[14px] text-ink/80 transition-colors hover:bg-beige-1 hover:text-green"
-                      >
-                        {childLabels[child.label] ?? child.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-          <LanguageSwitcher solid={solid} />
-          <Button
-            href={site.collar.kennismaking}
-            variant={solid ? "primary" : "on-dark"}
-          >
-            {t.common.bookIntro}
-          </Button>
-        </nav>
+              The Daily Pack
+            </span>
+          </Link>
 
-        <div className="relative z-50 flex items-center lg:hidden">
-          <button
-            type="button"
-            className={`flex h-10 w-10 items-center justify-center ${
-              solid ? "text-ink" : "text-white"
-            }`}
-            aria-label={
-              open
-                ? locale === "en"
-                  ? "Close menu"
-                  : "Menu sluiten"
-                : locale === "en"
-                  ? "Open menu"
-                  : "Menu openen"
-            }
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span className="sr-only">Menu</span>
-            <div className="flex w-5 flex-col gap-1.5">
-              <span
-                className={`block h-px w-full bg-current transition-transform ${
-                  open ? "translate-y-[7px] rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`block h-px w-full bg-current transition-opacity ${
-                  open ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`block h-px w-full bg-current transition-transform ${
-                  open ? "-translate-y-[7px] -rotate-45" : ""
-                }`}
-              />
-            </div>
-          </button>
+          <nav className="hidden items-center gap-6 xl:gap-8 lg:flex">
+            {nav.map((item) => (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() =>
+                  item.children.length > 0
+                    ? setActiveMenu(item.label)
+                    : undefined
+                }
+                onMouseLeave={() => setActiveMenu(null)}
+              >
+                <Link
+                  href={item.href}
+                  className={`text-[14px] transition-colors ${
+                    solid
+                      ? "text-ink/80 hover:text-green"
+                      : "text-white/90 hover:text-white"
+                  }`}
+                >
+                  {navLabels[item.label] ?? item.label}
+                </Link>
+                {item.children.length > 0 && activeMenu === item.label && (
+                  <div className="absolute left-1/2 top-full z-50 min-w-[210px] -translate-x-1/2 pt-3">
+                    <div className="overflow-hidden rounded-2xl border border-ink/8 bg-white py-2 shadow-[0_12px_40px_rgba(28,28,26,0.08)]">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className="mx-2 block rounded-xl px-4 py-2.5 text-[14px] text-ink/80 transition-colors hover:bg-beige-1 hover:text-green"
+                        >
+                          {childLabels[child.label] ?? child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+            <LanguageSwitcher solid={solid} />
+            <Button
+              href={site.collar.kennismaking}
+              variant={solid ? "primary" : "on-dark"}
+            >
+              {t.common.bookIntro}
+            </Button>
+          </nav>
+
+          <div className="relative z-50 flex items-center lg:hidden">
+            <button
+              type="button"
+              className={`flex h-11 w-11 items-center justify-center ${
+                solid ? "text-ink" : "text-white"
+              }`}
+              aria-label={
+                open
+                  ? locale === "en"
+                    ? "Close menu"
+                    : "Menu sluiten"
+                  : locale === "en"
+                    ? "Open menu"
+                    : "Menu openen"
+              }
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+            >
+              <span className="sr-only">Menu</span>
+              <div className="flex w-5 flex-col gap-1.5">
+                <span
+                  className={`block h-px w-full bg-current transition-transform ${
+                    open ? "translate-y-[7px] rotate-45" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-px w-full bg-current transition-opacity ${
+                    open ? "opacity-0" : ""
+                  }`}
+                />
+                <span
+                  className={`block h-px w-full bg-current transition-transform ${
+                    open ? "-translate-y-[7px] -rotate-45" : ""
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </div>
       </div>
 
-      {open && (
-        <div className="fixed inset-0 top-[72px] z-40 overflow-y-auto bg-beige-1 lg:hidden">
+      {open ? (
+        <div className="fixed inset-x-0 bottom-0 top-[72px] z-40 overflow-y-auto bg-beige-1 lg:hidden">
           <nav className="flex flex-col px-5 py-8">
             {nav.map((item) => {
               const expanded = mobileOpen === item.label;
@@ -252,7 +261,7 @@ export function Header() {
             </div>
           </nav>
         </div>
-      )}
+      ) : null}
     </header>
   );
 }

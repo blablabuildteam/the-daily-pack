@@ -214,6 +214,7 @@ export const pageContent: Record<Locale, PageContent> = {
     marquee: [
       "Ontzorging van A tot Z",
       "Elektrisch vervoer",
+      "GPS-tracking",
       "Loopband aan boord",
       "Verslag na elke wandeling",
     ],
@@ -842,7 +843,7 @@ export const pageContent: Record<Locale, PageContent> = {
       titleBefore: "Veelgestelde ",
       titleEm: "vragen.",
       intro:
-        "Antwoorden op de meest gestelde vragen over The Daily Pack.",
+        "Vragen over onze wandelingen of benieuwd naar de mogelijkheden voor jouw hond? Neem direct contact op.",
       items: [
         {
           q: "In welk gebied zijn jullie actief?",
@@ -965,6 +966,7 @@ export const pageContent: Record<Locale, PageContent> = {
     marquee: [
       "Care from A to Z",
       "Electric transport",
+      "GPS tracking",
       "Treadmill on board",
       "Report after every walk",
     ],
@@ -1591,7 +1593,7 @@ export const pageContent: Record<Locale, PageContent> = {
       eyebrow: "How it works",
       titleBefore: "Frequently asked ",
       titleEm: "questions.",
-      intro: "Answers to the most common questions about The Daily Pack.",
+      intro: "Questions about our walks or curious about the options for your dog? Get in touch directly.",
       items: [
         {
           q: "Where do you operate?",

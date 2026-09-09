@@ -180,7 +180,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     contact: {
       title: "Contact",
       intro:
-        "Vragen over The Daily Pack? Stuur een bericht — we reageren zo snel mogelijk.",
+        "Snel antwoord op de meest gestelde vragen.",
       name: "Naam",
       email: "E-mail",
       message: "Bericht",
@@ -302,7 +302,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     contact: {
       title: "Contact",
       intro:
-        "Questions about The Daily Pack? Send a message — we'll get back to you as soon as we can.",
+        "Quick answers to the most frequently asked questions.",
       name: "Name",
       email: "Email",
       message: "Message",

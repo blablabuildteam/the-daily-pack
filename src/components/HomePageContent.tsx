@@ -42,7 +42,7 @@ export function HomePageContent() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_15%,rgba(6,117,64,0.28),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_15%,rgba(6,117,64,0.06),transparent_50%)]" />
 
         <div className="relative z-[1] mx-auto w-full max-w-6xl px-5 pb-20 pt-40 md:px-8 md:pb-28">
           <p className="eyebrow animate-fade-up mb-7 text-green-light">
