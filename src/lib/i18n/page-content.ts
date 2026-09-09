@@ -843,7 +843,7 @@ export const pageContent: Record<Locale, PageContent> = {
       titleBefore: "Veelgestelde ",
       titleEm: "vragen.",
       intro:
-        "Vragen over onze wandelingen of benieuwd naar de mogelijkheden voor jouw hond? Neem direct contact op.",
+        "Snel antwoord op de meest gestelde vragen.",
       items: [
         {
           q: "In welk gebied zijn jullie actief?",
@@ -1593,7 +1593,7 @@ export const pageContent: Record<Locale, PageContent> = {
       eyebrow: "How it works",
       titleBefore: "Frequently asked ",
       titleEm: "questions.",
-      intro: "Questions about our walks or curious about the options for your dog? Get in touch directly.",
+      intro: "Quick answers to the most frequently asked questions.",
       items: [
         {
           q: "Where do you operate?",
