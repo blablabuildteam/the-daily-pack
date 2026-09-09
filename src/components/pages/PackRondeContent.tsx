@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ContentBlock } from "@/components/ContentBlock";
 import { CtaBlock } from "@/components/CtaBlock";
+import { MediaBand } from "@/components/MediaBand";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { Section } from "@/components/Section";
@@ -25,6 +26,9 @@ export function PackRondeContent() {
         }
         intro={c.intro}
       />
+
+      <MediaBand src="/media/pages/pack-ronde.jpg" priority />
+
 
       <Section theme={2} grain>
         <ContentBlock title={c.dailyBuild.title}>

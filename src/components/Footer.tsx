@@ -28,6 +28,7 @@ export function Footer() {
     Werkwijze: t.nav.werkwijze,
     "Tijden & Tarieven": t.nav.tijdenTarieven,
     "Pack Regels": t.nav.packRegels,
+    "Veelgestelde vragen": t.nav.faq,
     "The Daily Pack": t.nav.aboutTdp,
     Loopband: t.nav.loopband,
     Blog: t.nav.blog,

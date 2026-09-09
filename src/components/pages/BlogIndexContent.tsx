@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { MediaBand } from "@/components/MediaBand";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { Section } from "@/components/Section";
@@ -13,6 +14,8 @@ export function BlogIndexContent() {
   return (
     <>
       <PageHero title={blog.title} intro={blog.intro} />
+
+      <MediaBand src="/media/pages/blog.jpg" priority />
       <Section theme={2} grain>
         <ul className="space-y-0">
           {blog.posts.map((post, i) => (

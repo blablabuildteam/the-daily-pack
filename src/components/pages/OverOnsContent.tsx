@@ -2,6 +2,7 @@
 
 import { ContentBlock } from "@/components/ContentBlock";
 import { CtaBlock } from "@/components/CtaBlock";
+import { MediaBand } from "@/components/MediaBand";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { Section } from "@/components/Section";
@@ -24,6 +25,9 @@ export function OverOnsContent() {
         }
         intro={c.intro}
       />
+
+      <MediaBand src="/media/pages/over-ons.jpg" priority />
+
 
       <Section theme={2} grain>
         <ContentBlock title={c.origin.title}>

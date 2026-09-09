@@ -175,6 +175,13 @@ export type PageContent = {
     packRulesLabel: string;
     questionsLabel: string;
   };
+  faq: {
+    eyebrow: string;
+    titleBefore: string;
+    titleEm: string;
+    intro: string;
+    items: { q: string; a: string }[];
+  };
   blog: {
     title: string;
     intro: string;
@@ -205,12 +212,10 @@ export type PageContent = {
 export const pageContent: Record<Locale, PageContent> = {
   nl: {
     marquee: [
-      "Wandelen in het park of bos",
-      "Kleine groepen",
-      "Ophalen en thuisbrengen",
-      "Elektrische bus",
-      "GPS-tracker",
-      "Optionele loopband",
+      "Ontzorging van A tot Z",
+      "Elektrisch vervoer",
+      "Loopband aan boord",
+      "Verslag na elke wandeling",
     ],
     legalLabels: {
       terms: "Algemene Voorwaarden",
@@ -219,15 +224,15 @@ export const pageContent: Record<Locale, PageContent> = {
     },
     packRonde: {
       eyebrow: "Diensten",
-      titleBefore: "De dagelijkse ",
-      titleEm: "uitlaatservice.",
+      titleBefore: "De groepswandelservice in ",
+      titleEm: "Amsterdam-Noord.",
       intro:
-        "Pack Ronde is de dagelijkse uitlaatservice van The Daily Pack. Vaste dag, vast tijdslot, vaste begeleider. Kleine groepen, zodat elk dier de aandacht krijgt die nodig is.",
+        "Pack Ronde is de groepswandelservice van The Daily Pack in Amsterdam-Noord. Doordeweeks een vaste dag en tijd per week, opgehaald en thuisgebracht. Kleine groepen, zodat elk dier de aandacht krijgt die nodig is en verdient.",
       dailyBuild: {
-        title: "De dagelijkse opbouw",
+        title: "Wat is de Pack Ronde?",
         paragraphs: [
-          "Elke werkdag gaan we in meerdere rondes met kleine groepen op pad. Elke hond heeft een vast tijdslot. Waar mogelijk werken we met een vaste groep. Dat geeft de dieren rust en herkenning.",
-          "Een volledige sessie duurt ongeveer 1 uur en 45 minuten: ophalen, wandeling in het park of bos en, bij kou, regen of veel energie, de loopband, en thuisbrengen.",
+          "Elke werkdag gaan we in meerdere rondes met kleine groepen op pad. Elke hond met een abonnement heeft een vaste dag en een vast tijdslot. Waar mogelijk werken we met een vaste groep. Dat geeft de dieren rust en herkenning.",
+          "Je hond wordt minimaal 60 minuten uitgelaten in het park of bos. Ophalen gebeurt vanaf een vast tijdstip; het exacte moment kan door route en verkeer iets variëren.",
         ],
       },
       howSession: {
@@ -246,7 +251,7 @@ export const pageContent: Record<Locale, PageContent> = {
         included: [
           "Ophalen en thuisbrengen",
           "Wandeling in het park of bos",
-          "Loopband bij kou, regen of energie",
+          "Loopband bij slecht weer",
           "Foto's en video's",
           "Wandelverslag na elke sessie",
         ],
@@ -257,7 +262,7 @@ export const pageContent: Record<Locale, PageContent> = {
       noSubscription: {
         title: "Liever geen abonnement?",
         paragraphs: [
-          "Dezelfde Pack Ronde, maar dan zonder vaste verplichting. Boek een losse sessie wanneer het jou uitkomt.",
+          "Dezelfde Pack Ronde, maar dan zonder vaste verplichting. Boek een losse sessie wanneer het jou uitkomt, onder voorbehoud van beschikbaarheid.",
         ],
         ratesLinkLabel: "Bekijk tijden en tarieven",
       },
@@ -267,32 +272,32 @@ export const pageContent: Record<Locale, PageContent> = {
       titleBefore: "Een sessie ",
       titleEm: "op maat.",
       intro:
-        "Eigen Ronde is een privésessie voor één adres. Wandelen in het park of bos, met de loopband als aanvulling bij kou, regen of veel energie. Op afspraak en beschikbaarheid. Geen abonnement nodig.",
+        "Eigen Ronde is een privésessie voor één adres. Een wandeling in de buurt van het ophaaladres. Beschikbaar in Amsterdam-Noord en op aanvraag andere delen van Amsterdam. Geen abonnement nodig.",
       fullAttention: {
         title: "Volledige aandacht, één adres",
         paragraphs: [
-          "Bij een Eigen Ronde gaat de hond samen met een begeleider op pad, zonder andere dieren. Dit is ideaal voor honden die liever alleen gaan, energie kwijt moeten buiten de vaste rondes, of waarbij een tweede hond van hetzelfde adres meegaat (maximaal twee honden).",
+          "Bij een Eigen Ronde gaat de hond samen met een begeleider op pad, zonder andere dieren. Ideaal voor honden die liever alleen gaan of hun energie kwijt moeten buiten de vaste rondes. Heb je nog een hond op hetzelfde adres? Die kunnen samen mee. Maximaal twee honden per adres.",
         ],
-        ratesLinkLabel: "Bekijk de tarieven voor de actuele prijzen",
+        ratesLinkLabel: "Bekijk de tarieven",
       },
       howItLooks: {
         title: "Hoe ziet het eruit?",
         paragraphs: [
-          "Ophalen, wandelen, loopband (bij kou, regen of veel energie) en weer terugbrengen. Net als bij de Pack Ronde, maar dan alleen voor jouw hond.",
+          "Voor de Eigen Ronde reizen we (voornamelijk) met een elektrische fiets voor maximale wendbaarheid in de stad. Jouw hond wordt opgehaald en gaat te voet mee naar het dichtstbijzijnde park of veld. Na het thuisbrengen ontvang je het Wandelverslag.",
         ],
       },
       ctaButtonLabel: "Plan een Eigen Ronde",
     },
     werkwijze: {
       eyebrow: "Hoe het werkt",
-      titleBefore: "Een dag uit het leven van ",
-      titleEm: "jouw hond.",
+      titleBefore: "Zo verloopt een ",
+      titleEm: "wandeling.",
       intro:
-        "Elke sessie begint met een goede basis. Wij leren jouw hond kennen, zodat we weten wat er nodig is en hoe we dit het beste kunnen begeleiden.",
+        "Zo verloopt een Pack Ronde, van ophalen tot thuisbrengen. Elke sessie begint met een goede basis: wij leren jouw hond kennen, zodat we weten wat er nodig is en hoe we dit het beste begeleiden.",
       introMeeting: {
         title: "Eerst kennismaken",
         paragraphs: [
-          "Voordat een hond mee kan, plannen we een Kennismaking. Een persoonlijke ontmoeting van 30 minuten. We leren de hond kennen, bespreken de wensen en bepalen samen de volgende stap.",
+          "Voordat een hond mee kan, plannen we een Kennismaking. Een persoonlijke ontmoeting van circa 30 minuten. We leren de hond kennen, bespreken de wensen en bepalen samen de volgende stap.",
           "Tijdens de Kennismaking kun je dingen delen zoals waar jouw hond op reageert of bang voor is. We houden dit in de gaten en koppelen via het Wandelverslag terug hoe het gaat en de voortgang ervan.",
         ],
       },
@@ -300,19 +305,19 @@ export const pageContent: Record<Locale, PageContent> = {
       sessionSteps: [
         {
           title: "Ophalen en onderweg",
-          text: "Op het afgesproken moment halen wij jouw hond op. Elke hond reist in een eigen box in onze elektrische bus, rustig en op zichzelf. Door de kleine groepen zijn de ritjes kort en zit de hond niet onnodig lang in de bus.",
+          text: "Op het afgesproken moment halen wij jouw hond op. Elke hond reist in een eigen box in onze elektrische bus. Door de kleine groepen zijn de ritjes kort en zit de hond niet onnodig lang in de bus.",
         },
         {
           title: "Wandelen en socialiseren",
-          text: "In het park of bos wandelen we met een kleine groep. Hier draait het om meer dan beweging alleen: snuffelen, ontdekken en het ontmoeten van andere honden. De hond gebruikt zowel lichaam als kop, wat zorgt voor een voldaan gevoel. Een wandeling duurt ongeveer een uur.",
+          text: "Hier draait het om meer dan beweging alleen: snuffelen, ontdekken en het ontmoeten van andere honden. De hond gebruikt zowel lichaam als kop, wat zorgt voor een voldaan gevoel. Een wandeling duurt minimaal 60 minuten.",
         },
         {
           title: "Loopband",
-          text: "Bij kou, regen of veel energie is er terug in de bus tijd voor de loopband. Dit doen we ná de wandeling, als de hond al warm en ontspannen is. Zo raakt de hond op een veilige, gecontroleerde manier de laatste energie kwijt. Tempo en duur passen we aan op wat de hond aankan.",
+          text: "Bij slecht weer kan de loopband erbij, terug in de bus. Dat doen we na de wandeling, als de hond al warm en ontspannen is. Zo raakt de hond op een veilige, gecontroleerde manier de laatste energie kwijt. Tempo en duur passen we aan op wat de hond aankan.",
         },
         {
           title: "Thuisbrengen",
-          text: "Na de sessie brengen we jouw hond weer netjes thuis. Moe, voldaan en ontspannen, klaar voor de rest van de dag. Zo hou je zelf een rustige hond over, ook op drukke dagen.",
+          text: "Na de sessie brengen we jouw hond weer netjes thuis. Moe, voldaan en ontspannen, klaar voor de rest van de dag. Zo hou je zelf een rustige hond over, ook op jouw drukke dagen.",
         },
         {
           title: "Wandelverslag",
@@ -323,18 +328,19 @@ export const pageContent: Record<Locale, PageContent> = {
       treadmill: {
         title: "De loopband",
         paragraphs: [
-          "De loopband is geen vast onderdeel, maar een waardevolle aanvulling op de wandeling — bij kou, regen of veel energie. Geschikt voor alle honden met een maximale schofthoogte van 60 cm.",
+          "De loopband is geen vast onderdeel, maar een waardevolle aanvulling. Geschikt voor alle honden met een schofthoogte tot 60 cm.",
         ],
         linkLabel: "Meer over de loopband",
       },
       busHeading: "Veilig vervoer in onze elektrische bus",
       busFeatures: [
-        "Eigen kooi per hond",
+        "Eigen transportbox per hond",
         "Antislip vloer",
         "Ventilatie, ook wanneer de bus stilstaat",
-        "GPS tracker op elke hond tijdens de wandeling",
+        "Halsband met GPS-tracker tijdens de wandeling",
         "Vers water",
-        "EHBO kit en brandblusser aan boord",
+        "EHBO kit, schone handdoeken en een brandblusser aan boord",
+        "Loopplank",
         "Dagelijks schoongemaakt",
       ],
     },
@@ -347,51 +353,51 @@ export const pageContent: Record<Locale, PageContent> = {
         title: "Pack Ronde",
         paragraphs: [
           "Vaste dag en tijd, elke week. Kies één of meerdere dagen. Maandelijks vooruit betaald.",
-          "Inbegrepen: ophalen en thuisbrengen · wandeling · loopband bij kou, regen of energie · foto's en video's · Wandelverslag",
+          "Inbegrepen: ophalen en thuisbrengen · wandeling · loopband bij slecht weer · Wandelverslag met foto's en video's",
         ],
         prices: [
           {
-            label: "Weekdagen (ma–vr)",
-            value: "€30 per sessie · circa 1 uur en 45 minuten",
+            label: "Abonnement (ma–vr)",
+            value: "€30 per sessie",
           },
           {
             label: "Losse sessie doordeweeks",
-            value: "€32 (geen abonnement)",
+            value: "€33",
           },
         ],
-        notice: "Kennismaking is verplicht voor deelname.",
+        notice:
+          "Kennismaking is verplicht voor deelname. Prijzen zijn inclusief 21% btw.",
       },
       eigenRonde: {
         title: "Eigen Ronde",
         paragraphs: [
-          "Privésessie voor één adres, op afspraak en beschikbaarheid. Wandelen in het park of bos, met de loopband als aanvulling. Inclusief Wandelverslag.",
+          "Privésessie voor één adres, op afspraak en beschikbaarheid. Wandelen in de buurt van het ophaaladres. Inclusief Wandelverslag.",
+          "Kennismaking is verplicht voor ophalen zonder dat jij thuis bent.",
         ],
         prices: [
           { label: "30 minuten", value: "€30 per sessie" },
-          { label: "60 minuten", value: "€55 per sessie" },
+          { label: "60 minuten", value: "€50 per sessie" },
         ],
         maxDogs: "Maximaal 2 honden.",
         secondDogDiscount: "50% korting op de tweede hond",
-        vatNote: "Prijzen inclusief BTW.",
+        vatNote: "Prijzen inclusief btw.",
       },
       kennismaking: {
         title: "Kennismaking",
         paragraphs: [
-          "Voordat een hond mee kan, starten we met een Kennismaking. Een persoonlijke ontmoeting van 30 minuten. We leren de hond kennen en bespreken de wensen.",
-          "Verplicht voor alle diensten, eenmalig. Op afspraak.",
+          "Voordat een hond mee kan met de Pack Ronde of de Eigen Ronde zonder dat jij thuis bent, starten we met een Kennismaking. Een persoonlijke ontmoeting van circa 30 minuten. We leren de hond kennen en bespreken de wensen. Op afspraak.",
         ],
-        prices: [{ label: "Eenmalig", value: "€20 per hond" }],
+        prices: [{ label: "Eenmalig", value: "Gratis" }],
       },
       availabilityHeading: "Wanneer zijn we beschikbaar?",
       weekdaysHeading: "Weekdagen",
       weekSlots: [
-        "09:30–11:15 — Pack ronde, max 4 honden",
-        "11:30–13:15 — Pack ronde, max 4 honden",
-        "13:30–15:15 — Pack ronde, max 4 honden",
-        "Op afspraak — Eigen Ronde of Kennismaking",
+        "Ochtendronde — ophalen vanaf 10:00, max 4 honden per begeleider",
+        "Middagronde — ophalen vanaf 12:30, max 4 honden per begeleider",
+        "Eigen Ronde of Kennismaking — op afspraak",
       ],
       holidaysNote:
-        "Op officiële feestdagen is The Daily Pack gesloten, tenzij anders bepaald.",
+        "De tijden zijn streeftijden en kunnen door omstandigheden afwijken. Op officiële feestdagen is The Daily Pack gesloten, tenzij anders bepaald.",
     },
     packRegels: {
       eyebrow: "Hoe het werkt",
@@ -402,21 +408,21 @@ export const pageContent: Record<Locale, PageContent> = {
       health: {
         title: "Gezondheid en Toelating",
         paragraphs: [
-          "Alleen gezonde honden kunnen deelnemen. Dit betekent: alle vaccinaties up-to-date (met name hondenziekte, Parvo, Leptospirose en Kennelhoest), vlooien en tekenbehandeling actueel, minimaal 6 maanden oud.",
+          "Alleen gezonde honden kunnen deelnemen: alle vaccinaties up-to-date (met name hondenziekte, Parvo, Leptospirose en Kennelhoest) en vlooien- en tekenbehandeling actueel. Honden zijn welkom vanaf 6 maanden.",
           "Zieke honden of honden met een besmettelijke aandoening mogen niet deelnemen. Toelating wordt hervat zodra de hond volledig hersteld is. Loopse teven kunnen gedurende de volledige loopsheid niet deelnemen. Honden met agressief gedrag naar andere honden of mensen kunnen worden geweigerd.",
         ],
       },
       behaviour: {
         title: "Gedrag en Socialisatie",
         paragraphs: [
-          "The Daily Pack werkt met kleine groepen zodat socialisatie veilig kan plaatsvinden. We beoordelen gedrag en energie tijdens de Kennismaking. We vragen om open communicatie over temperament en triggers.",
+          "The Daily Pack werkt met kleine groepen, zodat onder andere socialisatie veilig kan plaatsvinden. We beoordelen gedrag en energie tijdens de Kennismaking. We vragen om open communicatie over temperament en triggers.",
           "Als een hond de rust of veiligheid van de groep in gevaar brengt, behoudt The Daily Pack zich het recht voor de hond tijdelijk of permanent te weigeren.",
         ],
       },
       packConcept: {
         title: "The Pack Concept",
         paragraphs: [
-          "Elke hond heeft een vast tijdslot. Waar mogelijk werken we met een vaste groep. Dat geeft de dieren rust en herkenning. De groep bestaat uit de honden die op dat tijdslot zijn ingepland en kan wijzigen door uitval of nieuwe aanmeldingen.",
+          "Bij een abonnement heeft elke hond een vast tijdslot. Waar mogelijk werken we met een vaste groep. Dat geeft de dieren rust en herkenning. De groep bestaat uit honden die op dat moment zijn ingepland en kan wijzigen door uitval of nieuwe aanmeldingen.",
         ],
       },
       expectations: {
@@ -435,7 +441,7 @@ export const pageContent: Record<Locale, PageContent> = {
       planning: {
         title: "Planning en Annulering",
         paragraphs: [
-          "Voor Eigen Ronde geldt: afmelden meer dan 24 uur van tevoren betekent de sessie inhalen binnen enkele weken. Afmelden binnen 24 uur vervalt de sessie, zonder inhalen.",
+          "Voor Eigen Ronde en losse sessies geldt: afmelden kan tot 18:00 uur de avond ervoor. Bij afmelden na 18:00 uur wordt het volledige tarief in rekening gebracht.",
           "Voor Pack Ronde geldt geen compensatie bij een gemiste sessie, omdat het abonnement een vaste plek reserveert, geen los consumptierecht.",
           "Bij Code Oranje/Rood of temperaturen boven 33 graden passen we de service aan of annuleren we. Je wordt hierover altijd direct geïnformeerd. Op officiële feestdagen is The Daily Pack gesloten, tenzij anders bepaald.",
         ],
@@ -453,18 +459,18 @@ export const pageContent: Record<Locale, PageContent> = {
       titleBefore: "Het verhaal achter ",
       titleEm: "The Daily Pack.",
       intro:
-        "Een service voor baasjes die het beste willen voor hun hond, zonder dat ze er zelf altijd bij hoeven te zijn.",
+        "Een service voor baasjes die het beste willen voor hun hond.",
       origin: {
         title: "Hoe The Daily Pack ontstond",
         paragraphs: [
           "Het idee achter The Daily Pack is simpel: een hond die goed belast is, is een fijne hond thuis. Geen kort blokje om, maar echte beweging buiten, socialiseren en de ruimte om stoom af te blazen. Op dagen dat je werkt of andere dingen te doen hebt, zit een goed rondje er niet altijd in.",
-          "Wat begon met de honden van vrienden en familie, groeide uit tot een service voor meer baasjes die het beste willen voor hun hond, zonder dat ze er zelf altijd bij hoeven te zijn.",
+          "Bewust anders opgezet: kleine groepen voor meer rust en focus. Hierdoor zijn ook de ritten korter, dus minder tijd in de transportbox. Na elke wandeling ontvang je een verslag, zodat je weet hoe het ging en hoe je hond zich ontwikkelt.",
         ],
       },
       teamHeading: "Het team",
       quote: [
-        "Met twee energieke honden thuis merk ik dagelijks hoe belangrijk goede beweging is. Het zorgt voor een hond die zich beter voelt, en dat zie je terug in het gedrag: minder stress, rustiger thuis en minder reactief.",
-        "Daarbij werk ik bewust met kleine groepen: dat betekent kortere tijd in de bus en meer aandacht voor iedere hond tijdens de wandeling.",
+        "Met twee honden thuis weet ik hoe belangrijk goede beweging is. Een hond die energie kwijt kan, voelt zich beter: minder stress, rustiger thuis en minder reactief. Daar had ik zelf ook profijt van op de dagen dat ik thuis aan het werk was of voor afspraken de deur uit moest.",
+        "Ik vind het ook belangrijk dat een hond niet lang aan het reizen is en het baasje een terugkoppeling krijgt. Lopen met kleinere groepen betekent dus een kortere tijd in de bus en meer aandacht voor en focus op iedere hond.",
       ],
       quoteName: "Tim",
       quoteRole:
@@ -475,17 +481,17 @@ export const pageContent: Record<Locale, PageContent> = {
       titleBefore: "De ",
       titleEm: "loopband.",
       intro:
-        "Gecontroleerde beweging, focus en stoom afblazen. De loopband is een waardevolle aanvulling op iedere wandeling, voor elk dier op elk niveau.",
+        "Gecontroleerde beweging, focus en stoom afblazen. De loopband is een waardevolle aanvulling op de wandeling bij slecht weer, voor elke hond die er baat bij heeft.",
       moreThanMovement: {
         title: "Meer dan alleen beweging",
         paragraphs: [
-          "De loopband vervangt de wandeling niet, het vult aan. Waar buiten lopen zorgt voor socialisatie en mentale prikkels, biedt de loopband gecontroleerde, gerichte beweging. De hond werkt aan conditie, balans en lichaamsbesef, zonder afleidingen van buiten. Het resultaat is een dier dat niet alleen fysiek maar ook mentaal tot rust komt.",
+          "De loopband vervangt de wandeling niet, het vult aan. Waar buiten lopen zorgt voor socialisatie en mentale prikkels, biedt de loopband gecontroleerde, gerichte beweging. De hond werkt aan conditie, balans en lichaamsbesef, zonder afleidingen van buiten. Het resultaat is een dier dat niet alleen fysiek, maar ook mentaal tot rust komt.",
         ],
       },
       suitable: {
         title: "Geschikt voor elke hond",
         paragraphs: [
-          "De loopband is een waardevolle aanvulling op de wandeling voor elke hond. Extra beweging, focus en de kans om alle resterende energie kwijt te raken op een rustige, gecontroleerde manier. Heb je een energieke hond? Dan is de loopband helemaal geweldig. Ook bij kou of regen kan de hond zo alsnog voldoende energie kwijt.",
+          "De loopband is geschikt voor elke hond. Extra beweging, focus en de kans om op een rustige, gecontroleerde manier energie kwijt te raken. Ook bij kou of regen kan de hond zo alsnog voldoende bewegen.",
         ],
         noteLabel: "Note:",
         note: "De loopband in onze bus is geschikt voor honden met een schofthoogte tot 60 cm.",
@@ -493,8 +499,8 @@ export const pageContent: Record<Locale, PageContent> = {
       buildUp: {
         title: "Rustig opbouwen, altijd begeleid",
         paragraphs: [
-          "Niet elk dier stapt meteen vol vertrouwen op de loopband. Dat is normaal. We nemen de tijd om elke hond op eigen tempo te laten wennen. Eerst kennismaken, dan rustig opbouwen. Tempo en duur worden altijd aangepast.",
-          "Kan een hond om welke reden dan ook niet op de loopband? Laat het weten, dan houden we daar rekening mee. De loopband wordt altijd gebruikt na de wandeling. Zo is het dier al warm, ontspannen en klaar voor de volgende stap.",
+          "Elke hond went op eigen tempo aan de loopband en stapt meestal niet meteen vol vertrouwen erop. Het is daarom normaal dat een hond een paar keer moet oefenen. Met de loopplank stapt de hond makkelijk en zelfstandig op de band. Doordat de loopband manueel is, bepaalt de hond zelf de snelheid op de band.",
+          "Kan een hond om welke reden dan ook niet op de loopband? Laat het weten, dan houden we daar rekening mee. Als we de loopband inzetten, doen we dat na de wandeling. Zo is het dier al warm, ontspannen en klaar voor de volgende stap.",
         ],
       },
       ctaText: "Begin met een Kennismaking, de eerste stap voor elke dienst.",
@@ -647,7 +653,7 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "5.2",
-              text: "Sleutels worden niet gekopieerd en voorzien van geen adres.",
+              text: "Sleutels worden niet gekopieerd en niet voorzien van een adres.",
             },
             {
               n: "5.3",
@@ -672,7 +678,7 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "6.2",
-              text: "De Gasthond wordt vervoerd in een transportbox in de elektrische bus van de Ondernemer.",
+              text: "De Gasthond wordt, afhankelijk van de afgenomen dienst, vervoerd in een transportbox in de elektrische bus van de Ondernemer, dan wel per elektrische fiets of te voet begeleid.",
             },
             {
               n: "6.3",
@@ -684,7 +690,7 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "6.5",
-              text: "De Ondernemer is gerechtigd de Gasthond los te laten lopen op eigen terrein, tenzij schriftelijk anders overeengekomen.",
+              text: "De Ondernemer is gerechtigd de Gasthond los te laten lopen in daarvoor aangewezen openbare losloopgebieden en/of op afgesloten terreinen, tenzij anders overeengekomen.",
             },
             {
               n: "6.6",
@@ -713,11 +719,11 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "7.5",
-              text: "Indien niet duidelijk is welke hond de schade heeft veroorzaakt, worden de kosten gedeeld tussen de eigenaren van de betrokken honden.",
+              text: "Indien schade ontstaat door een incident tussen meerdere honden, wordt de aansprakelijkheid vastgesteld op basis van de wettelijke risico-aansprakelijkheid (art. 6:179 BW) en de van toepassing zijnde aansprakelijkheidsverzekeringen van de betrokken Consumenten.",
             },
             {
               n: "7.6",
-              text: "De Ondernemer is niet aansprakelijk voor schade aan de woning of de inboedel veroorzaakt door een natte of vuile hond.",
+              text: "De Ondernemer is niet aansprakelijk voor schade aan de woning en/of de inboedel veroorzaakt door een natte of vuile hond.",
             },
             {
               n: "7.7",
@@ -730,7 +736,7 @@ export const pageContent: Record<Locale, PageContent> = {
           clauses: [
             {
               n: "8.1",
-              text: "Voor losse boekingen (kennismaking, losse Pack Ronde-sessie, Eigen Ronde) dienen annuleringen uiterlijk om 18:00 uur de avond ervoor te worden doorgegeven. Dit geldt ook in geval van ziekte. Bij annuleringen na 18:00 uur wordt het volledige tarief in rekening gebracht.",
+              text: "Voor losse boekingen (losse Pack Ronde-sessie, Eigen Ronde) dienen annuleringen uiterlijk om 18:00 uur de avond ervoor te worden doorgegeven. Dit geldt ook in geval van ziekte. Bij annuleringen na 18:00 uur wordt het volledige tarief in rekening gebracht. Voor een kosteloze Kennismaking wordt een tijdig afbericht (uiterlijk 24 uur van tevoren) gewaardeerd.",
             },
             {
               n: "8.2",
@@ -763,7 +769,7 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "9.3",
-              text: "Bij uitblijven van betaling wordt na 30 dagen een toeslag van 10% van het totaalbedrag toegepast. Na 60 dagen wordt een toeslag van 30% toegepast.",
+              text: "Bij het uitblijven van betaling ontvangt de Consument een schriftelijke aanmaning met een betalingstermijn van 14 dagen. Indien betaling alsnog uitblijft, is de Ondernemer gerechtigd de wettelijke incassokosten en wettelijke rente in rekening te brengen conform de Wet buitengerechtelijke incassokosten.",
             },
             {
               n: "9.4",
@@ -771,7 +777,7 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "9.5",
-              text: "Betaling geschiedt via automatische incasso of bankoverschrijving, tenzij schriftelijk anders overeengekomen.",
+              text: "Betaling geschiedt via automatische incasso of bankoverschrijving, tenzij anders overeengekomen.",
             },
           ],
         },
@@ -830,6 +836,43 @@ export const pageContent: Record<Locale, PageContent> = {
       seeAlsoBefore: "Zie ook de",
       packRulesLabel: "Pack Regels",
       questionsLabel: "Vragen?",
+    },
+    faq: {
+      eyebrow: "Hoe het werkt",
+      titleBefore: "Veelgestelde ",
+      titleEm: "vragen.",
+      intro:
+        "Antwoorden op de meest gestelde vragen over The Daily Pack.",
+      items: [
+        {
+          q: "In welk gebied zijn jullie actief?",
+          a: "De Pack Ronde (groepswandeling) is momenteel beschikbaar in Amsterdam-Noord. De Eigen Ronde (individuele wandeling) is op aanvraag in heel Amsterdam te boeken.",
+        },
+        {
+          q: "Waarom is de kennismaking verplicht en wat kost dit?",
+          a: "Omdat we met roedels werken, willen we vooraf zeker weten dat jouw hond goed in de groep past. Tijdens de kennismaking nemen we alles één-op-één door, ontmoet de hond de begeleider en stemmen we de sleuteloverdracht af. De kennismaking is gratis.",
+        },
+        {
+          q: "Moet ik thuis zijn wanneer mijn hond wordt opgehaald?",
+          a: "Nee, dat hoeft niet. Tijdens de kennismaking bespreken we hoe we toegang krijgen tot de woning (bijvoorbeeld via een sleuteloverdracht), zodat jouw hond mee kan op avontuur terwijl jij aan het werk bent.",
+        },
+        {
+          q: "Hoe lang duurt een Pack Ronde?",
+          a: "We wandelen gegarandeerd minimaal 60 minuten. Inclusief het ophalen en thuisbrengen duurt een totale sessie circa 2 uur (afhankelijk van het verkeer).",
+        },
+        {
+          q: "Wat houdt het Wandelverslag in?",
+          a: "Na iedere sessie ontvang je een korte update met eventuele opmerkingen over het gedrag of de voortgang van jouw hond. Uiteraard sturen we hier ook foto's en/of video's bij, zodat je mee kunt genieten.",
+        },
+        {
+          q: "Is de loopband voor iedere hond geschikt?",
+          a: "In principe wel, mits de hond een maximale schofthoogte van 60 cm heeft. Onze loopband is manueel (niet aangedreven door een motor) en daardoor ideaal voor honden met veel energie, overgewicht of senioren. Doordat hij niet elektrisch is, is hij niet geschikt voor revalidatietrajecten.",
+        },
+        {
+          q: "Kan ik een losse sessie voor de loopband boeken?",
+          a: "Ja, dat is zeker mogelijk. Neem hiervoor contact met ons op via het contactformulier op de website.",
+        },
+      ],
     },
     blog: {
       title: "Blog.",
@@ -920,12 +963,10 @@ export const pageContent: Record<Locale, PageContent> = {
 
   en: {
     marquee: [
-      "Walking in the park or woods",
-      "Small groups",
-      "Pick-up and drop-off",
-      "Electric van",
-      "GPS tracker",
-      "Optional treadmill",
+      "Care from A to Z",
+      "Electric transport",
+      "Treadmill on board",
+      "Report after every walk",
     ],
     legalLabels: {
       terms: "Terms & Conditions",
@@ -934,15 +975,15 @@ export const pageContent: Record<Locale, PageContent> = {
     },
     packRonde: {
       eyebrow: "Services",
-      titleBefore: "The daily ",
-      titleEm: "walking service.",
+      titleBefore: "The group walking service in ",
+      titleEm: "Amsterdam-Noord.",
       intro:
-        "Pack Walk is The Daily Pack's daily dog-walking service. Fixed day, fixed time slot, fixed handler. Small groups, so every dog gets the attention they need.",
+        "Pack Walk is The Daily Pack's group walking service in Amsterdam-Noord. A fixed weekday and time each week, with pick-up and drop-off. Small groups, so every dog gets the attention they need and deserve.",
       dailyBuild: {
-        title: "The daily structure",
+        title: "What is Pack Walk?",
         paragraphs: [
-          "Every weekday we head out in several rounds with small groups. Each dog has a fixed time slot. Where possible we work with a consistent group. That gives the dogs calm and familiarity.",
-          "A full session lasts about 1 hour and 45 minutes: pick-up, a walk in the park or woods and, in cold, rain or high energy, the treadmill, and drop-off.",
+          "Every weekday we head out in several rounds with small groups. Every dog on a subscription has a fixed day and time slot. Where possible we work with a consistent group. That gives the dogs calm and familiarity.",
+          "Your dog is walked for at least 60 minutes in the park or woods. Pick-up starts from a fixed time; the exact moment may vary slightly due to the route and traffic.",
         ],
       },
       howSession: {
@@ -961,7 +1002,7 @@ export const pageContent: Record<Locale, PageContent> = {
         included: [
           "Pick-up and drop-off",
           "Walk in the park or woods",
-          "Treadmill in cold, rain or high energy",
+          "Treadmill in bad weather",
           "Photos and videos",
           "Walk report after every session",
         ],
@@ -972,7 +1013,7 @@ export const pageContent: Record<Locale, PageContent> = {
       noSubscription: {
         title: "Prefer not to subscribe?",
         paragraphs: [
-          "The same Pack Walk, but without a fixed commitment. Book a single session whenever it suits you.",
+          "The same Pack Walk, but without a fixed commitment. Book a single session whenever it suits you, subject to availability.",
         ],
         ratesLinkLabel: "See times and rates",
       },
@@ -982,32 +1023,32 @@ export const pageContent: Record<Locale, PageContent> = {
       titleBefore: "A session ",
       titleEm: "tailored to you.",
       intro:
-        "Private Walk is a private session for one address. Walking in the park or woods, with the treadmill as support in cold, rain or high energy. By appointment and availability. No subscription required.",
+        "Private Walk is a private session for one address. A walk near the pick-up address. Available in Amsterdam-Noord and, on request, other parts of Amsterdam. No subscription required.",
       fullAttention: {
         title: "Full attention, one address",
         paragraphs: [
-          "On a Private Walk, the dog goes out with a handler alone — no other dogs. Ideal for dogs that prefer to walk alone, need to burn energy outside the fixed rounds, or when a second dog from the same address comes along (maximum two dogs).",
+          "On a Private Walk, the dog goes out with a handler alone — no other dogs. Ideal for dogs that prefer to walk alone or need to burn energy outside the fixed rounds. Have another dog at the same address? They can come along together. Maximum two dogs per address.",
         ],
-        ratesLinkLabel: "See rates for current prices",
+        ratesLinkLabel: "See the rates",
       },
       howItLooks: {
         title: "What does it look like?",
         paragraphs: [
-          "Pick-up, walk, treadmill (in cold, rain or high energy) and drop-off. Just like Pack Walk, but only for your dog.",
+          "For Private Walk we travel (mainly) by electric bike for maximum flexibility in the city. Your dog is picked up and walks with us to the nearest park or field. After drop-off you receive the Walk Report.",
         ],
       },
       ctaButtonLabel: "Plan a Private Walk",
     },
     werkwijze: {
       eyebrow: "How it works",
-      titleBefore: "A day in the life of ",
-      titleEm: "your dog.",
+      titleBefore: "How a ",
+      titleEm: "walk unfolds.",
       intro:
-        "Every session starts with a solid foundation. We get to know your dog so we know what is needed and how best to support them.",
+        "This is how a Pack Walk goes, from pick-up to drop-off. Every session starts with a solid foundation: we get to know your dog so we know what is needed and how best to support them.",
       introMeeting: {
         title: "Introduction first",
         paragraphs: [
-          "Before a dog can join, we schedule an Introduction — a personal 30-minute meeting. We get to know the dog, discuss your wishes and decide together on the next step.",
+          "Before a dog can join, we schedule an Introduction — a personal meeting of about 30 minutes. We get to know the dog, discuss your wishes and decide together on the next step.",
           "During the Introduction you can share things like what your dog reacts to or is afraid of. We keep an eye on this and report back via the Walk Report on how things are going and the progress.",
         ],
       },
@@ -1015,19 +1056,19 @@ export const pageContent: Record<Locale, PageContent> = {
       sessionSteps: [
         {
           title: "Pick-up and on the way",
-          text: "At the agreed time we collect your dog. Each dog travels in their own crate in our electric van — calm and on their own. Small groups mean short rides, so the dog is not in the van longer than necessary.",
+          text: "At the agreed time we collect your dog. Each dog travels in their own crate in our electric van. Small groups mean short rides, so the dog is not in the van longer than necessary.",
         },
         {
           title: "Walking and socialising",
-          text: "In the park or woods we walk with a small group. It is about more than movement alone: sniffing, exploring and meeting other dogs. The dog uses both body and mind, which leads to a sense of fulfilment. A walk lasts about an hour.",
+          text: "It is about more than movement alone: sniffing, exploring and meeting other dogs. The dog uses both body and mind, which leads to a sense of fulfilment. A walk lasts at least 60 minutes.",
         },
         {
           title: "Treadmill",
-          text: "In cold, rain or high energy, there is time for the treadmill back in the van. We do this after the walk, when the dog is already warm and relaxed. That way the dog can safely and controllably burn off remaining energy. Pace and duration are adjusted to what the dog can handle.",
+          text: "In bad weather the treadmill can be added back in the van. We do this after the walk, when the dog is already warm and relaxed. That way the dog can safely and controllably burn off remaining energy. Pace and duration are adjusted to what the dog can handle.",
         },
         {
           title: "Drop-off",
-          text: "After the session we bring your dog neatly home. Tired, fulfilled and relaxed — ready for the rest of the day. You keep a calm dog, even on busy days.",
+          text: "After the session we bring your dog neatly home. Tired, fulfilled and relaxed — ready for the rest of the day. You keep a calm dog, even on your busy days.",
         },
         {
           title: "Walk report",
@@ -1038,7 +1079,7 @@ export const pageContent: Record<Locale, PageContent> = {
       treadmill: {
         title: "The treadmill",
         paragraphs: [
-          "The treadmill is not a fixed part of every session, but a valuable addition to the walk — in cold, rain or high energy. Suitable for all dogs with a maximum withers height of 60 cm.",
+          "The treadmill is not a fixed part of every session, but a valuable addition. Suitable for all dogs with a withers height up to 60 cm.",
         ],
         linkLabel: "More about the treadmill",
       },
@@ -1047,9 +1088,10 @@ export const pageContent: Record<Locale, PageContent> = {
         "Individual crate per dog",
         "Non-slip floor",
         "Ventilation, even when the van is parked",
-        "GPS tracker on every dog during the walk",
+        "GPS collar during the walk",
         "Fresh water",
-        "First-aid kit and fire extinguisher on board",
+        "First-aid kit, clean towels and a fire extinguisher on board",
+        "Loading ramp",
         "Cleaned daily",
       ],
     },
@@ -1062,28 +1104,30 @@ export const pageContent: Record<Locale, PageContent> = {
         title: "Pack Walk",
         paragraphs: [
           "Fixed day and time, every week. Choose one or more days. Paid monthly in advance.",
-          "Included: pick-up and drop-off · walk · treadmill in cold, rain or high energy · photos and videos · Walk report",
+          "Included: pick-up and drop-off · walk · treadmill in bad weather · Walk report with photos and videos",
         ],
         prices: [
           {
-            label: "Weekdays (Mon–Fri)",
-            value: "€30 per session · about 1 hour and 45 minutes",
+            label: "Subscription (Mon–Fri)",
+            value: "€30 per session",
           },
           {
             label: "Single weekday session",
-            value: "€32 (no subscription)",
+            value: "€33",
           },
         ],
-        notice: "An introduction is required to take part.",
+        notice:
+          "An introduction is required to take part. Prices include 21% VAT.",
       },
       eigenRonde: {
         title: "Private Walk",
         paragraphs: [
-          "Private session for one address, by appointment and availability. Walking in the park or woods, with the treadmill as support. Includes Walk report.",
+          "Private session for one address, by appointment and availability. Walking near the pick-up address. Includes Walk report.",
+          "An introduction is required for pick-up when you are not at home.",
         ],
         prices: [
           { label: "30 minutes", value: "€30 per session" },
-          { label: "60 minutes", value: "€55 per session" },
+          { label: "60 minutes", value: "€50 per session" },
         ],
         maxDogs: "Maximum 2 dogs.",
         secondDogDiscount: "50% off the second dog",
@@ -1092,21 +1136,19 @@ export const pageContent: Record<Locale, PageContent> = {
       kennismaking: {
         title: "Introduction",
         paragraphs: [
-          "Before a dog can join, we start with an Introduction — a personal 30-minute meeting. We get to know the dog and discuss your wishes.",
-          "Required for all services, one-time. By appointment.",
+          "Before a dog can join Pack Walk or Private Walk when you are not at home, we start with an Introduction — a personal meeting of about 30 minutes. We get to know the dog and discuss your wishes. By appointment.",
         ],
-        prices: [{ label: "One-time", value: "€20 per dog" }],
+        prices: [{ label: "One-time", value: "Free" }],
       },
       availabilityHeading: "When are we available?",
       weekdaysHeading: "Weekdays",
       weekSlots: [
-        "09:30–11:15 — Pack Walk, max 4 dogs",
-        "11:30–13:15 — Pack Walk, max 4 dogs",
-        "13:30–15:15 — Pack Walk, max 4 dogs",
-        "By appointment — Private Walk or Introduction",
+        "Morning round — pick-up from 10:00, max 4 dogs per handler",
+        "Afternoon round — pick-up from 12:30, max 4 dogs per handler",
+        "Private Walk or Introduction — by appointment",
       ],
       holidaysNote:
-        "On official public holidays The Daily Pack is closed, unless otherwise agreed.",
+        "Times are target times and may vary due to circumstances. On official public holidays The Daily Pack is closed, unless otherwise agreed.",
     },
     packRegels: {
       eyebrow: "How it works",
@@ -1117,21 +1159,21 @@ export const pageContent: Record<Locale, PageContent> = {
       health: {
         title: "Health and admission",
         paragraphs: [
-          "Only healthy dogs may take part. That means: all vaccinations up to date (especially distemper, Parvo, Leptospirosis and Kennel Cough), flea and tick treatment current, at least 6 months old.",
+          "Only healthy dogs may take part: all vaccinations up to date (especially distemper, Parvo, Leptospirosis and Kennel Cough) and flea and tick treatment current. Dogs are welcome from 6 months of age.",
           "Sick dogs or dogs with a contagious condition may not take part. Admission resumes once the dog has fully recovered. Bitches in season cannot take part for the full heat cycle. Dogs with aggressive behaviour towards other dogs or people may be refused.",
         ],
       },
       behaviour: {
         title: "Behaviour and socialisation",
         paragraphs: [
-          "The Daily Pack works with small groups so socialisation can take place safely. We assess behaviour and energy during the Introduction. We ask for open communication about temperament and triggers.",
+          "The Daily Pack works with small groups so socialisation, among other things, can take place safely. We assess behaviour and energy during the Introduction. We ask for open communication about temperament and triggers.",
           "If a dog endangers the calm or safety of the group, The Daily Pack reserves the right to refuse the dog temporarily or permanently.",
         ],
       },
       packConcept: {
         title: "The Pack concept",
         paragraphs: [
-          "Each dog has a fixed time slot. Where possible we work with a consistent group. That gives the dogs calm and familiarity. The group consists of the dogs scheduled for that slot and may change due to cancellations or new registrations.",
+          "With a subscription, each dog has a fixed time slot. Where possible we work with a consistent group. That gives the dogs calm and familiarity. The group consists of the dogs scheduled at that time and may change due to cancellations or new registrations.",
         ],
       },
       expectations: {
@@ -1150,7 +1192,7 @@ export const pageContent: Record<Locale, PageContent> = {
       planning: {
         title: "Planning and cancellation",
         paragraphs: [
-          "For Private Walk: cancelling more than 24 hours in advance means the session can be made up within a few weeks. Cancelling within 24 hours means the session is forfeited, with no make-up.",
+          "For Private Walk and single sessions: you can cancel until 18:00 the evening before. Cancellations after 18:00 are charged at the full rate.",
           "For Pack Walk there is no compensation for a missed session, because the subscription reserves a fixed place — it is not a pay-per-use right.",
           "In Code Orange/Red or temperatures above 33°C we adjust or cancel the service. You are always informed directly. On official public holidays The Daily Pack is closed, unless otherwise agreed.",
         ],
@@ -1167,19 +1209,18 @@ export const pageContent: Record<Locale, PageContent> = {
       eyebrow: "About",
       titleBefore: "The story behind ",
       titleEm: "The Daily Pack.",
-      intro:
-        "A service for owners who want the best for their dog, without always having to be there themselves.",
+      intro: "A service for owners who want the best for their dog.",
       origin: {
         title: "How The Daily Pack began",
         paragraphs: [
           "The idea behind The Daily Pack is simple: a dog that is properly exercised is a pleasant dog at home. Not a quick loop around the block, but real outdoor movement, socialising and room to let off steam. On days when you work or have other things to do, a proper walk is not always possible.",
-          "What started with friends' and family's dogs grew into a service for more owners who want the best for their dog, without always having to be there themselves.",
+          "Deliberately set up differently: small groups for more calm and focus. That also means shorter rides — less time in the crate. After every walk you receive a report, so you know how it went and how your dog is developing.",
         ],
       },
       teamHeading: "The team",
       quote: [
-        "With two energetic dogs at home I notice every day how important good exercise is. It leads to a dog that feels better, and you see it in their behaviour: less stress, calmer at home and less reactive.",
-        "I deliberately work with small groups: that means less time in the van and more attention for every dog during the walk.",
+        "With two dogs at home I know how important good exercise is. A dog that can burn energy feels better: less stress, calmer at home and less reactive. I benefited from that myself on days I was working from home or had to leave for appointments.",
+        "I also think it matters that a dog is not travelling for long and that the owner gets feedback. Walking with smaller groups therefore means less time in the van and more attention and focus for every dog.",
       ],
       quoteName: "Tim",
       quoteRole:
@@ -1190,7 +1231,7 @@ export const pageContent: Record<Locale, PageContent> = {
       titleBefore: "The ",
       titleEm: "treadmill.",
       intro:
-        "Controlled movement, focus and letting off steam. The treadmill is a valuable addition to every walk, for every dog at every level.",
+        "Controlled movement, focus and letting off steam. The treadmill is a valuable addition to the walk in bad weather, for every dog that benefits from it.",
       moreThanMovement: {
         title: "More than just movement",
         paragraphs: [
@@ -1200,7 +1241,7 @@ export const pageContent: Record<Locale, PageContent> = {
       suitable: {
         title: "Suitable for every dog",
         paragraphs: [
-          "The treadmill is a valuable addition to the walk for every dog. Extra movement, focus and the chance to burn remaining energy in a calm, controlled way. Have an energetic dog? Then the treadmill is especially great. In cold or rain, the dog can still burn enough energy this way.",
+          "The treadmill is suitable for every dog. Extra movement, focus and the chance to burn energy in a calm, controlled way. In cold or rain, the dog can still get enough exercise this way.",
         ],
         noteLabel: "Note:",
         note: "The treadmill in our van is suitable for dogs with a withers height up to 60 cm.",
@@ -1208,8 +1249,8 @@ export const pageContent: Record<Locale, PageContent> = {
       buildUp: {
         title: "Build up gently, always supervised",
         paragraphs: [
-          "Not every dog steps onto the treadmill with full confidence straight away. That is normal. We take the time to let each dog get used to it at their own pace. First an introduction, then a gradual build-up. Pace and duration are always adjusted.",
-          "If a dog cannot use the treadmill for any reason, let us know and we will take that into account. The treadmill is always used after the walk. That way the dog is already warm, relaxed and ready for the next step.",
+          "Every dog gets used to the treadmill at their own pace and usually does not step on with full confidence straight away. It is therefore normal for a dog to practise a few times. With the ramp, the dog steps onto the belt easily and independently. Because the treadmill is manual, the dog sets the pace themselves.",
+          "If a dog cannot use the treadmill for any reason, let us know and we will take that into account. When we use the treadmill, we do so after the walk. That way the dog is already warm, relaxed and ready for the next step.",
         ],
       },
       ctaText: "Start with an Introduction — the first step for every service.",
@@ -1387,7 +1428,7 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "6.2",
-              text: "The Guest dog is transported in a crate in the Entrepreneur's electric van.",
+              text: "Depending on the service booked, the Guest dog is transported in a crate in the Entrepreneur's electric van, or accompanied by electric bike or on foot.",
             },
             {
               n: "6.3",
@@ -1399,7 +1440,7 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "6.5",
-              text: "The Entrepreneur is entitled to let the Guest dog off-leash on their own grounds, unless otherwise agreed in writing.",
+              text: "The Entrepreneur is entitled to let the Guest dog off-leash in designated public off-leash areas and/or on enclosed grounds, unless otherwise agreed.",
             },
             {
               n: "6.6",
@@ -1428,11 +1469,11 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "7.5",
-              text: "If it is unclear which dog caused the damage, the costs will be shared between the owners of the dogs involved.",
+              text: "If damage arises from an incident between multiple dogs, liability is determined on the basis of statutory strict liability (art. 6:179 Dutch Civil Code) and the applicable liability insurance of the Consumers involved.",
             },
             {
               n: "7.6",
-              text: "The Entrepreneur is not liable for damage to the home or furnishings caused by a wet or dirty dog.",
+              text: "The Entrepreneur is not liable for damage to the home and/or furnishings caused by a wet or dirty dog.",
             },
             {
               n: "7.7",
@@ -1445,7 +1486,7 @@ export const pageContent: Record<Locale, PageContent> = {
           clauses: [
             {
               n: "8.1",
-              text: "For single bookings (introduction, single Pack Walk session, Private Walk), cancellations must be notified by 18:00 the evening before. This also applies in case of illness. Cancellations after 18:00 will be charged at the full rate.",
+              text: "For single bookings (single Pack Walk session, Private Walk), cancellations must be notified by 18:00 the evening before. This also applies in case of illness. Cancellations after 18:00 will be charged at the full rate. For a free Introduction, timely notice (at least 24 hours in advance) is appreciated.",
             },
             {
               n: "8.2",
@@ -1478,7 +1519,7 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "9.3",
-              text: "If payment is outstanding, a surcharge of 10% of the total amount applies after 30 days. After 60 days a surcharge of 30% applies.",
+              text: "If payment is outstanding, the Consumer receives a written reminder with a payment term of 14 days. If payment is still not made, the Entrepreneur is entitled to charge statutory collection costs and statutory interest in accordance with the Extrajudicial Collection Costs Act.",
             },
             {
               n: "9.4",
@@ -1486,7 +1527,7 @@ export const pageContent: Record<Locale, PageContent> = {
             },
             {
               n: "9.5",
-              text: "Payment is made by direct debit or bank transfer, unless otherwise agreed in writing.",
+              text: "Payment is made by direct debit or bank transfer, unless otherwise agreed.",
             },
           ],
         },
@@ -1545,6 +1586,42 @@ export const pageContent: Record<Locale, PageContent> = {
       seeAlsoBefore: "See also the",
       packRulesLabel: "Pack Rules",
       questionsLabel: "Questions?",
+    },
+    faq: {
+      eyebrow: "How it works",
+      titleBefore: "Frequently asked ",
+      titleEm: "questions.",
+      intro: "Answers to the most common questions about The Daily Pack.",
+      items: [
+        {
+          q: "Where do you operate?",
+          a: "The Pack Walk (group walk) is currently available in Amsterdam-Noord. The Private Walk (individual walk) can be booked on request across Amsterdam.",
+        },
+        {
+          q: "Why is the introduction required and what does it cost?",
+          a: "Because we work in packs, we want to be sure beforehand that your dog fits well in the group. During the introduction we go through everything one-on-one, your dog meets the handler, and we arrange key handover. The introduction is free.",
+        },
+        {
+          q: "Do I need to be home when my dog is picked up?",
+          a: "No. During the introduction we discuss how we get access to the home (for example via a key handover), so your dog can join while you are at work.",
+        },
+        {
+          q: "How long does a Pack Walk last?",
+          a: "We walk for a guaranteed minimum of 60 minutes. Including pick-up and drop-off, a full session takes about 2 hours (depending on traffic).",
+        },
+        {
+          q: "What is the Walk report?",
+          a: "After every session you receive a short update with notes on your dog's behaviour or progress. We also include photos and/or videos so you can enjoy the outing too.",
+        },
+        {
+          q: "Is the treadmill suitable for every dog?",
+          a: "In principle yes, as long as the dog has a maximum withers height of 60 cm. Our treadmill is manual (not motor-driven) and ideal for dogs with lots of energy, overweight dogs or seniors. Because it is not electric, it is not suitable for rehabilitation programmes.",
+        },
+        {
+          q: "Can I book a single treadmill session?",
+          a: "Yes. Get in touch via the contact form on the website.",
+        },
+      ],
     },
     blog: {
       title: "Blog.",

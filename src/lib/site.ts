@@ -35,6 +35,7 @@ export const nav = [
       { label: "Werkwijze", href: "/hoe-het-werkt/werkwijze" },
       { label: "Tijden & Tarieven", href: "/hoe-het-werkt/tijden-tarieven" },
       { label: "Pack Regels", href: "/hoe-het-werkt/pack-regels" },
+      { label: "Veelgestelde vragen", href: "/hoe-het-werkt/faq" },
     ],
   },
   {

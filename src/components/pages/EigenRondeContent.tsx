@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ContentBlock } from "@/components/ContentBlock";
 import { CtaBlock } from "@/components/CtaBlock";
+import { MediaBand } from "@/components/MediaBand";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
 import { useLocale } from "@/lib/i18n/locale-context";
@@ -25,6 +26,9 @@ export function EigenRondeContent() {
         }
         intro={c.intro}
       />
+
+      <MediaBand src="/media/pages/eigen-ronde.jpg" priority />
+
 
       <Section theme={2} grain>
         <ContentBlock title={c.fullAttention.title}>

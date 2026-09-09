@@ -21,6 +21,7 @@ export type Dictionary = {
     werkwijze: string;
     tijdenTarieven: string;
     packRegels: string;
+    faq: string;
     aboutTdp: string;
     loopband: string;
   };
@@ -39,6 +40,7 @@ export type Dictionary = {
     instagramTitleBefore: string;
     instagramTitleEm: string;
     instagramIntro: string;
+    instagramCta: string;
     stepsEyebrow: string;
     stepsTitleBefore: string;
     stepsTitleEm: string;
@@ -90,6 +92,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       werkwijze: "Werkwijze",
       tijdenTarieven: "Tijden & Tarieven",
       packRegels: "Pack Regels",
+      faq: "Veelgestelde vragen",
       aboutTdp: "The Daily Pack",
       loopband: "Loopband",
     },
@@ -98,7 +101,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroTitleBefore: "Upgrade de dag van",
       heroTitleEm: "jouw hond.",
       heroText:
-        "Drukke dagen of andere verplichtingen? The Daily Pack haalt op, gaat de natuur in en brengt een voldane hond terug. Wandelen, socialiseren en — bij kou, regen of veel energie — de loopband. In kleine groepen, met volledige aandacht.",
+        "Geen tijd om je hond goed uit te laten? Wij nemen het over. Ophalen, een echte wandeling in bos of park, en voldaan weer thuis. In kleine groepen of alleen met jouw hond, met kortere ritjes en veel aandacht.",
       discover: "Ontdek hoe het werkt",
       whyEyebrow: "Waarom",
       whyTitleBefore: "Waarom",
@@ -108,7 +111,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           n: "01",
           title: "Meer dan een blokje om",
-          text: "Een echte wandeling in het park of bos, met de loopband als aanvulling bij kou, regen of veel energie. Jouw hond komt fysiek en mentaal voldaan thuis.",
+          text: "Een echte wandeling in het park of bos, met de loopband als aanvulling bij slecht weer. Jouw hond komt fysiek en mentaal voldaan thuis.",
         },
         {
           n: "02",
@@ -126,6 +129,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       instagramTitleEm: "op pad",
       instagramIntro:
         "De laatste avonturen, foto's en video's op onze Instagram.",
+      instagramCta: "Bezoek onze Instagram",
       stepsEyebrow: "Werkwijze",
       stepsTitleBefore: "Hoe werkt",
       stepsTitleEm: "het?",
@@ -133,7 +137,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       steps: [
         {
           title: "Kennismaking",
-          text: "We starten met een persoonlijke ontmoeting, bespreken de wensen en bepalen samen wat de volgende stap is.",
+          text: "We starten met een gratis, persoonlijke ontmoeting, bespreken de wensen en bepalen samen wat de volgende stap is.",
         },
         {
           title: "Ophalen en naar het park",
@@ -145,7 +149,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           title: "Loopband",
-          text: "Bij kou, regen of een hond met net iets te veel energie is er tijd voor de loopband. Stoom afblazen op een veilige, gecontroleerde manier.",
+          text: "Bij slecht weer is er tijd voor de loopband. Stoom afblazen op een veilige, gecontroleerde manier.",
         },
         {
           title: "Thuisbrengen",
@@ -183,7 +187,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       send: "Verstuur bericht",
       sending: "Versturen…",
       success: "Bedankt! Je bericht is verstuurd.",
-      error: "Er ging iets mis. Mail ons direct via info@thedailypack.nl.",
+      error: "Er ging iets mis. Probeer het opnieuw of gebruik het contactformulier later nog eens.",
     },
     blog: {
       title: "Blog",
@@ -210,6 +214,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       werkwijze: "Our approach",
       tijdenTarieven: "Times & Rates",
       packRegels: "Pack Rules",
+      faq: "FAQ",
       aboutTdp: "The Daily Pack",
       loopband: "Treadmill",
     },
@@ -218,7 +223,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroTitleBefore: "Upgrade your",
       heroTitleEm: "dog's day.",
       heroText:
-        "Busy days or other commitments? The Daily Pack picks up, heads into nature and brings home a fulfilled dog. Walking, socialising and — in cold, rain or high energy — the treadmill. In small groups, with full attention.",
+        "No time to walk your dog properly? We take over. Pick-up, a real walk in the woods or park, and home again fulfilled. In small groups or one-on-one with your dog — shorter rides and plenty of attention.",
       discover: "Discover how it works",
       whyEyebrow: "Why",
       whyTitleBefore: "Why",
@@ -228,7 +233,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           n: "01",
           title: "More than a quick loop",
-          text: "A real walk in the park or woods, with the treadmill as support in cold, rain or high energy. Your dog comes home physically and mentally fulfilled.",
+          text: "A real walk in the park or woods, with the treadmill as support in bad weather. Your dog comes home physically and mentally fulfilled.",
         },
         {
           n: "02",
@@ -244,7 +249,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       instagramEyebrow: "Instagram",
       instagramTitleBefore: "The pack",
       instagramTitleEm: "on the move",
-      instagramIntro: "The latest adventures, photos and videos on our Instagram.",
+      instagramIntro:
+        "The latest adventures, photos and videos on our Instagram.",
+      instagramCta: "Visit our Instagram",
       stepsEyebrow: "Approach",
       stepsTitleBefore: "How does",
       stepsTitleEm: "it work?",
@@ -252,7 +259,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       steps: [
         {
           title: "Introduction",
-          text: "We start with a personal meeting, discuss your wishes and decide together on the next step.",
+          text: "We start with a free, personal meeting, discuss your wishes and decide together on the next step.",
         },
         {
           title: "Pick-up and to the park",
@@ -264,7 +271,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           title: "Treadmill",
-          text: "In cold, rain or when a dog has a little too much energy, there's time for the treadmill. Letting off steam in a safe, controlled way.",
+          text: "In bad weather there is time for the treadmill. Letting off steam in a safe, controlled way.",
         },
         {
           title: "Drop-off",
@@ -302,7 +309,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
       send: "Send message",
       sending: "Sending…",
       success: "Thanks! Your message has been sent.",
-      error: "Something went wrong. Email us directly at info@thedailypack.nl.",
+      error:
+        "Something went wrong. Please try again or use the contact form later.",
     },
     blog: {
       title: "Blog",

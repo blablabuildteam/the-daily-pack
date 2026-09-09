@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { SiteChrome } from "@/components/SiteChrome";
@@ -39,6 +40,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${cormorant.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PLG8PXY8BM"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-g-plg8pxy8bm" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PLG8PXY8BM');`}
+        </Script>
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>

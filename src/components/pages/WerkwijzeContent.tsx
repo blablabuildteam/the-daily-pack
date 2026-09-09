@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ContentBlock } from "@/components/ContentBlock";
 import { CtaBlock } from "@/components/CtaBlock";
+import { MediaBand } from "@/components/MediaBand";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { Section } from "@/components/Section";
@@ -25,6 +26,9 @@ export function WerkwijzeContent() {
         }
         intro={c.intro}
       />
+
+      <MediaBand src="/media/pages/werkwijze.jpg" priority videoSrc="/media/videos/werkwijze.mp4" />
+
 
       <Section theme={2} grain>
         <ContentBlock title={c.introMeeting.title}>

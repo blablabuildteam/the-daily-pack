@@ -16,6 +16,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState<string | null>(null);
   const solid = !isHome || scrolled || open;
 
   useEffect(() => {
@@ -36,6 +37,11 @@ export function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    setOpen(false);
+    setMobileOpen(null);
+  }, [pathname]);
+
   const navLabels: Record<string, string> = {
     Diensten: t.nav.services,
     "Hoe het werkt": t.nav.howItWorks,
@@ -50,6 +56,7 @@ export function Header() {
     Werkwijze: t.nav.werkwijze,
     "Tijden & Tarieven": t.nav.tijdenTarieven,
     "Pack Regels": t.nav.packRegels,
+    "Veelgestelde vragen": t.nav.faq,
     "The Daily Pack": t.nav.aboutTdp,
     Loopband: t.nav.loopband,
     Blog: t.nav.blog,
@@ -126,14 +133,21 @@ export function Header() {
           </Button>
         </nav>
 
-        <div className="relative z-50 flex items-center gap-3 lg:hidden">
-          <LanguageSwitcher solid={solid} />
+        <div className="relative z-50 flex items-center lg:hidden">
           <button
             type="button"
             className={`flex h-10 w-10 items-center justify-center ${
               solid ? "text-ink" : "text-white"
             }`}
-            aria-label={open ? (locale === "en" ? "Close menu" : "Menu sluiten") : (locale === "en" ? "Open menu" : "Menu openen")}
+            aria-label={
+              open
+                ? locale === "en"
+                  ? "Close menu"
+                  : "Menu sluiten"
+                : locale === "en"
+                  ? "Open menu"
+                  : "Menu openen"
+            }
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
@@ -162,38 +176,72 @@ export function Header() {
       {open && (
         <div className="fixed inset-0 top-[72px] z-40 overflow-y-auto bg-beige-1 lg:hidden">
           <nav className="flex flex-col px-5 py-8">
-            {nav.map((item) => (
-              <div key={item.label} className="border-b border-ink/8 py-5">
-                {item.children.length > 0 ? (
-                  <>
-                    <p className="mb-3 font-[family-name:var(--font-cormorant)] text-2xl font-light text-ink">
-                      {navLabels[item.label] ?? item.label}
-                    </p>
-                    <div className="flex flex-col gap-3">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="text-[15px] text-muted transition-colors hover:text-green"
-                          onClick={() => setOpen(false)}
+            {nav.map((item) => {
+              const expanded = mobileOpen === item.label;
+              const hasChildren = item.children.length > 0;
+
+              return (
+                <div key={item.label} className="border-b border-ink/8 py-4">
+                  {hasChildren ? (
+                    <>
+                      <button
+                        type="button"
+                        className="flex w-full items-center justify-between gap-4 text-left"
+                        aria-expanded={expanded}
+                        onClick={() =>
+                          setMobileOpen((current) =>
+                            current === item.label ? null : item.label,
+                          )
+                        }
+                      >
+                        <span className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-ink">
+                          {navLabels[item.label] ?? item.label}
+                        </span>
+                        <span
+                          aria-hidden
+                          className={`text-ink/50 transition-transform ${
+                            expanded ? "rotate-45" : ""
+                          }`}
                         >
-                          {childLabels[child.label] ?? child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-ink"
-                    onClick={() => setOpen(false)}
-                  >
-                    {navLabels[item.label] ?? item.label}
-                  </Link>
-                )}
-              </div>
-            ))}
-            <div className="mt-8">
+                          +
+                        </span>
+                      </button>
+                      {expanded ? (
+                        <div className="mt-4 flex flex-col gap-3 pb-2 pl-1">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className="text-[15px] text-muted transition-colors hover:text-green"
+                              onClick={() => setOpen(false)}
+                            >
+                              {childLabels[child.label] ?? child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      ) : null}
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="font-[family-name:var(--font-cormorant)] text-2xl font-light text-ink"
+                      onClick={() => setOpen(false)}
+                    >
+                      {navLabels[item.label] ?? item.label}
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
+
+            <div className="mt-8 flex items-center justify-between gap-4">
+              <p className="text-[12px] uppercase tracking-[0.14em] text-muted">
+                {locale === "en" ? "Language" : "Taal"}
+              </p>
+              <LanguageSwitcher solid />
+            </div>
+
+            <div className="mt-6">
               <Button
                 href={site.collar.kennismaking}
                 variant="primary"

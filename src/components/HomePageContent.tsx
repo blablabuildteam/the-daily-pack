@@ -8,22 +8,22 @@ import { Reveal } from "@/components/Reveal";
 import { useLocale } from "@/lib/i18n/locale-context";
 import { site } from "@/lib/site";
 
-const instagramImages = [
-  "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?auto=format&fit=crop&w=800&q=80",
+const whyImages = [
+  "/media/home/why-1.jpg",
+  "/media/home/why-2.jpg",
+  "/media/home/why-3.jpg",
+];
+
+const galleryImages = [
+  "/media/home/why-1.jpg",
+  "/media/home/why-2.jpg",
+  "/media/home/why-3.jpg",
+  "/media/home/offer-pack.jpg",
 ];
 
 const offerMeta = [
-  {
-    href: "/diensten/pack-ronde",
-    img: "https://images.unsplash.com/photo-1444212477490-ca407925329e?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    href: "/diensten/eigen-ronde",
-    img: "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=1200&q=80",
-  },
+  { href: "/diensten/pack-ronde", img: "/media/home/offer-pack.jpg" },
+  { href: "/diensten/eigen-ronde", img: "/media/home/offer-eigen.jpg" },
 ];
 
 export function HomePageContent() {
@@ -34,11 +34,11 @@ export function HomePageContent() {
     <>
       <section className="on-dark relative flex min-h-[100svh] flex-col justify-end overflow-hidden theme-4">
         <Image
-          src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=2400&q=80"
+          src="/media/home/hero.jpg"
           alt=""
           fill
           priority
-          className="object-cover"
+          className="object-cover object-[center_35%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25" />
@@ -86,14 +86,34 @@ export function HomePageContent() {
               </Reveal>
 
               <Reveal delay={0.15} className="mt-10 hidden lg:block">
-                <div className="arch relative aspect-[4/5] w-full max-w-[340px]">
-                  <Image
-                    src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=80"
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="340px"
-                  />
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="arch relative col-span-2 aspect-[4/5]">
+                    <Image
+                      src={whyImages[0]}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="340px"
+                    />
+                  </div>
+                  <div className="relative aspect-square overflow-hidden rounded-2xl">
+                    <Image
+                      src={whyImages[1]}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="170px"
+                    />
+                  </div>
+                  <div className="relative aspect-square overflow-hidden rounded-2xl">
+                    <Image
+                      src={whyImages[2]}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="170px"
+                    />
+                  </div>
                 </div>
               </Reveal>
             </div>
@@ -127,18 +147,23 @@ export function HomePageContent() {
 
       <section className="theme-5">
         <div className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
-          <Reveal>
-            <p className="eyebrow mb-6 text-green">{home.instagramEyebrow}</p>
-            <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
-              {home.instagramTitleBefore} <em>{home.instagramTitleEm}</em>
-            </h2>
-            <p className="mt-4 max-w-md text-[16px] text-ink/70">
-              {home.instagramIntro}
-            </p>
+          <Reveal className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="eyebrow mb-6 text-green">{home.instagramEyebrow}</p>
+              <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
+                {home.instagramTitleBefore} <em>{home.instagramTitleEm}</em>
+              </h2>
+              <p className="mt-4 max-w-md text-[16px] text-ink/70">
+                {home.instagramIntro}
+              </p>
+            </div>
+            <Button href={site.instagram} variant="secondary" external>
+              {home.instagramCta}
+            </Button>
           </Reveal>
 
           <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
-            {instagramImages.map((src, i) => (
+            {galleryImages.map((src, i) => (
               <Reveal
                 key={src}
                 delay={i * 0.07}
@@ -171,16 +196,14 @@ export function HomePageContent() {
       <section className="theme-2 grain">
         <div className="relative z-[1] mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-36">
           <Reveal className="mb-16 md:mb-20">
-            <div>
-              <p className="eyebrow mb-6 text-green">{home.stepsEyebrow}</p>
-              <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
-                {home.stepsTitleBefore} <em>{home.stepsTitleEm}</em>
-              </h2>
-              <div className="mt-7">
-                <Button href="/hoe-het-werkt/werkwijze" variant="secondary">
-                  {home.moreInfo}
-                </Button>
-              </div>
+            <p className="eyebrow mb-6 text-green">{home.stepsEyebrow}</p>
+            <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
+              {home.stepsTitleBefore} <em>{home.stepsTitleEm}</em>
+            </h2>
+            <div className="mt-7">
+              <Button href="/hoe-het-werkt/werkwijze" variant="secondary">
+                {home.moreInfo}
+              </Button>
             </div>
           </Reveal>
 

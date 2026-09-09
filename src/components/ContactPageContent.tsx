@@ -13,9 +13,6 @@ export function ContactPageContent() {
     <>
       <PageHero title={`${t.contact.title}.`} intro={t.contact.intro} />
       <Section theme={2} grain>
-        <p className="max-w-xl text-[15px] text-ink/70">
-          {site.email}
-        </p>
         <ContactForm />
       </Section>
     </>
