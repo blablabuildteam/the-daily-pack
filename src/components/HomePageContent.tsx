@@ -71,69 +71,68 @@ export function HomePageContent() {
 
       <Marquee />
 
+      {/* Waarom — header full-width, images + reasons aligned */}
       <section className="theme-1 grain">
-        <div className="relative z-[1] mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-36">
-          <div className="grid gap-14 lg:grid-cols-[5fr_7fr] lg:gap-20">
-            <div className="lg:sticky lg:top-32 lg:self-start">
-              <Reveal>
-                <p className="eyebrow mb-6 text-green">{home.whyEyebrow}</p>
-                <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
-                  {home.whyTitleBefore} <em>{home.whyTitleEm}</em>
-                </h2>
-                <p className="mt-5 max-w-sm text-[16px] text-ink/70">
-                  {home.whyIntro}
-                </p>
-              </Reveal>
+        <div className="relative z-[1] mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
+          <Reveal className="max-w-2xl">
+            <p className="eyebrow mb-6 text-green">{home.whyEyebrow}</p>
+            <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
+              {home.whyTitleBefore} <em>{home.whyTitleEm}</em>
+            </h2>
+            <p className="mt-5 max-w-lg text-[16px] text-ink/70">
+              {home.whyIntro}
+            </p>
+          </Reveal>
 
-              <Reveal delay={0.15} className="mt-10 hidden lg:block">
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="arch relative col-span-2 aspect-[4/5]">
-                    <Image
-                      src={whyImages[0]}
-                      alt=""
-                      fill
-                      className="object-cover"
-                      sizes="340px"
-                    />
-                  </div>
-                  <div className="relative aspect-square overflow-hidden rounded-2xl">
-                    <Image
-                      src={whyImages[1]}
-                      alt=""
-                      fill
-                      className="object-cover"
-                      sizes="170px"
-                    />
-                  </div>
-                  <div className="relative aspect-square overflow-hidden rounded-2xl">
-                    <Image
-                      src={whyImages[2]}
-                      alt=""
-                      fill
-                      className="object-cover"
-                      sizes="170px"
-                    />
-                  </div>
+          <div className="mt-14 grid items-start gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-14">
+            <Reveal delay={0.08}>
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
+                <div className="arch relative col-span-2 aspect-[16/10]">
+                  <Image
+                    src={whyImages[0]}
+                    alt=""
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 520px"
+                  />
                 </div>
-              </Reveal>
-            </div>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem]">
+                  <Image
+                    src={whyImages[1]}
+                    alt=""
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 50vw, 250px"
+                  />
+                </div>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[1.25rem]">
+                  <Image
+                    src={whyImages[2]}
+                    alt=""
+                    fill
+                    className="object-cover object-[center_40%]"
+                    sizes="(max-width: 1024px) 50vw, 250px"
+                  />
+                </div>
+              </div>
+            </Reveal>
 
-            <div>
+            <div className="lg:pt-1">
               {home.reasons.map((item, i) => (
                 <Reveal
                   key={item.n}
                   delay={i * 0.08}
-                  className="group border-t border-ink/12 py-10 first:border-t-0 first:pt-0 md:py-12"
+                  className="group border-t border-ink/12 py-8 first:border-t-0 first:pt-0 md:py-9"
                 >
-                  <div className="flex gap-6 md:gap-10">
-                    <span className="font-[family-name:var(--font-cormorant)] text-[clamp(2.5rem,4vw,3.5rem)] font-light leading-none text-green/35 transition-colors duration-500 group-hover:text-green">
+                  <div className="flex gap-5 md:gap-7">
+                    <span className="w-12 shrink-0 font-[family-name:var(--font-cormorant)] text-[clamp(2rem,3.2vw,2.75rem)] font-light leading-none text-green/40 transition-colors duration-500 group-hover:text-green md:w-14">
                       {item.n}
                     </span>
-                    <div className="pt-1">
-                      <h3 className="mb-3 text-[clamp(1.35rem,2.2vw,1.7rem)]">
+                    <div className="min-w-0 pt-0.5">
+                      <h3 className="mb-2.5 text-[clamp(1.3rem,2vw,1.6rem)]">
                         {item.title}
                       </h3>
-                      <p className="max-w-md text-[15.5px] leading-relaxed text-ink/70">
+                      <p className="text-[15.5px] leading-relaxed text-ink/70">
                         {item.text}
                       </p>
                     </div>
@@ -145,6 +144,7 @@ export function HomePageContent() {
         </div>
       </section>
 
+      {/* Instagram */}
       <section className="theme-5">
         <div className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
           <Reveal className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -162,12 +162,12 @@ export function HomePageContent() {
             </Button>
           </Reveal>
 
-          <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+          <div className="mt-14 grid grid-cols-2 gap-3 md:mt-16 md:grid-cols-4 md:gap-5">
             {galleryImages.map((src, i) => (
               <Reveal
                 key={src}
                 delay={i * 0.07}
-                className={i % 2 === 1 ? "md:translate-y-10" : ""}
+                className={i % 2 === 1 ? "md:translate-y-8" : ""}
               >
                 <a
                   href={site.instagram}
@@ -193,49 +193,44 @@ export function HomePageContent() {
         </div>
       </section>
 
+      {/* Hoe werkt het — compact grid i.p.v. lange strook */}
       <section className="theme-2 grain">
-        <div className="relative z-[1] mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-36">
-          <Reveal className="mb-16 md:mb-20">
-            <p className="eyebrow mb-6 text-green">{home.stepsEyebrow}</p>
-            <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
-              {home.stepsTitleBefore} <em>{home.stepsTitleEm}</em>
-            </h2>
-            <div className="mt-7">
-              <Button href="/hoe-het-werkt/werkwijze" variant="secondary">
-                {home.moreInfo}
-              </Button>
+        <div className="relative z-[1] mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
+          <Reveal className="mb-12 flex flex-col items-start justify-between gap-6 md:mb-16 md:flex-row md:items-end">
+            <div>
+              <p className="eyebrow mb-6 text-green">{home.stepsEyebrow}</p>
+              <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
+                {home.stepsTitleBefore} <em>{home.stepsTitleEm}</em>
+              </h2>
             </div>
+            <Button href="/hoe-het-werkt/werkwijze" variant="secondary">
+              {home.moreInfo}
+            </Button>
           </Reveal>
 
-          <div className="relative">
-            <div className="dotted-path absolute bottom-4 left-[19px] top-4 hidden md:block" />
-            <ol className="space-y-12 md:space-y-16">
-              {home.steps.map((step, i) => (
-                <Reveal
-                  key={step.title}
-                  delay={i * 0.05}
-                  className="relative md:pl-24"
-                >
-                  <span className="mb-4 flex h-10 w-10 items-center justify-center rounded-full border border-green/40 bg-beige-2 font-[family-name:var(--font-cormorant)] text-[19px] text-green md:absolute md:left-0 md:top-0 md:mb-0">
-                    {i + 1}
+          <ol className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {home.steps.map((step, i) => (
+              <Reveal key={step.title} delay={i * 0.05} className="relative">
+                <li className="h-full border-t border-green/25 pt-6">
+                  <span className="mb-4 inline-flex font-[family-name:var(--font-cormorant)] text-[2rem] font-light leading-none text-green/45">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
-                  <div className="max-w-xl">
-                    <h3 className="mb-2.5 text-[clamp(1.3rem,2vw,1.6rem)]">
-                      {step.title}
-                    </h3>
-                    <p className="text-[15.5px] leading-relaxed text-ink/70">
-                      {step.text}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </ol>
-          </div>
+                  <h3 className="mb-2.5 text-[clamp(1.25rem,1.8vw,1.5rem)]">
+                    {step.title}
+                  </h3>
+                  <p className="text-[15px] leading-relaxed text-ink/70">
+                    {step.text}
+                  </p>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
         </div>
       </section>
 
-      <section className="theme-1">
-        <div className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-36">
+      {/* Aanbod — witte achtergrond voor duidelijke scheiding */}
+      <section className="theme-5">
+        <div className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
           <Reveal>
             <p className="eyebrow mb-6 text-green">{home.offersEyebrow}</p>
             <h2 className="text-[clamp(2.2rem,4vw,3rem)]">
@@ -243,30 +238,30 @@ export function HomePageContent() {
             </h2>
           </Reveal>
 
-          <div className="mt-14 grid gap-10 md:grid-cols-2 md:gap-8 lg:gap-12">
+          <div className="mt-12 grid gap-8 md:mt-14 md:grid-cols-2 md:gap-8 lg:gap-10">
             {home.offers.map((offer, i) => (
               <Reveal key={offerMeta[i].href} delay={i * 0.1}>
                 <Link href={offerMeta[i].href} className="group block">
-                  <div className="arch relative aspect-[4/5] w-full">
+                  <div className="arch relative aspect-[5/4] w-full md:aspect-[4/5]">
                     <Image
                       src={offerMeta[i].img}
                       alt=""
                       fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
-                      <h3 className="font-[family-name:var(--font-cormorant)] text-[clamp(1.8rem,3vw,2.4rem)] font-light text-white">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                      <h3 className="font-[family-name:var(--font-cormorant)] text-[clamp(1.7rem,2.8vw,2.25rem)] font-light text-white">
                         {offer.title}
                       </h3>
                     </div>
                   </div>
-                  <div className="flex items-start justify-between gap-6 pt-6">
+                  <div className="flex items-start justify-between gap-5 pt-5">
                     <p className="max-w-sm text-[15.5px] leading-relaxed text-ink/70">
                       {offer.text}
                     </p>
-                    <span className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink transition-all duration-300 group-hover:border-green group-hover:bg-green group-hover:text-white">
+                    <span className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink transition-all duration-300 group-hover:border-green group-hover:bg-green group-hover:text-white">
                       <svg
                         width="15"
                         height="15"
@@ -300,7 +295,7 @@ export function HomePageContent() {
           aria-hidden
           className="pointer-events-none absolute -right-24 top-1/2 hidden w-[480px] -translate-y-1/2 opacity-[0.13] brightness-[3] lg:block"
         />
-        <div className="relative z-[1] mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-36">
+        <div className="relative z-[1] mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
           <Reveal>
             <h2 className="max-w-2xl text-[clamp(2.4rem,5vw,3.75rem)] text-white">
               {home.ctaTitleBefore} <em>{home.ctaTitleEm}</em>
