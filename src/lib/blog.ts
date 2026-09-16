@@ -12,8 +12,8 @@ export const blogPosts: BlogPost[] = [
     slug: "hond-moe-maken-waarom-intensief-bewegen-meer-is-dan-energie-kwijt",
     title:
       "Hond moe maken: waarom intensief bewegen meer is dan energie kwijt",
-    date: "2026-06-18",
-    dateLabel: "18 jun",
+    date: "2026-09-06",
+    dateLabel: "6 sep",
     excerpt:
       "Drie blokjes om en de hond zit alsnog te springen tegen de deur. Moe maken lijkt een kwestie van genoeg meters stapelen, maar dat klopt niet helemaal.",
     sections: [

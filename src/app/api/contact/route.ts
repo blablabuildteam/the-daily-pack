@@ -19,12 +19,21 @@ export async function POST(request: Request) {
     );
   }
 
+  const origin =
+    request.headers.get("origin") ??
+    request.headers.get("referer") ??
+    "https://thedailypack.nl";
+
   try {
     const res = await fetch(`https://formsubmit.co/ajax/${site.email}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        Origin: origin.includes("thedailypack.nl")
+          ? "https://thedailypack.nl"
+          : origin,
+        Referer: "https://thedailypack.nl/contact",
       },
       body: JSON.stringify({
         name,
@@ -43,18 +52,24 @@ export async function POST(request: Request) {
       message?: string;
     } | null;
 
-    if (!res.ok) {
+    const success =
+      res.ok &&
+      (payload?.success === true ||
+        payload?.success === "true" ||
+        payload?.success === "True");
+
+    if (!success) {
       return NextResponse.json(
         {
           ok: false,
           error: "upstream",
-          detail: payload?.message ?? null,
+          detail: payload?.message ?? `status_${res.status}`,
         },
         { status: 502 },
       );
     }
 
-    return NextResponse.json({ ok: true, message: payload?.message ?? null });
+    return NextResponse.json({ ok: true });
   } catch {
     return NextResponse.json({ ok: false, error: "network" }, { status: 502 });
   }

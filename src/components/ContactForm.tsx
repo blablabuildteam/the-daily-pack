@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useLocale } from "@/lib/i18n/locale-context";
+import { site } from "@/lib/site";
 
 export function ContactForm() {
   const { t } = useLocale();
@@ -15,23 +16,53 @@ export function ContactForm() {
 
     const form = e.currentTarget;
     const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    if (!name || !email || !message) {
+      setStatus("error");
+      return;
+    }
 
     try {
+      // Prefer our API (server-side FormSubmit), fall back to direct FormSubmit ajax
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (res.ok) {
+        const json = (await res.json().catch(() => null)) as {
+          ok?: boolean;
+        } | null;
+        if (json?.ok) {
+          setStatus("success");
+          form.reset();
+          return;
+        }
+      }
+
+      // Fallback: FormSubmit ajax from the browser
+      const direct = await fetch(`https://formsubmit.co/ajax/${site.email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
-          name: data.get("name"),
-          email: data.get("email"),
-          message: data.get("message"),
+          name,
+          email,
+          message,
+          _subject: `The Daily Pack — bericht van ${name}`,
+          _replyto: email,
+          _template: "table",
+          _captcha: "false",
         }),
       });
 
-      const json = (await res.json().catch(() => null)) as {
-        ok?: boolean;
-      } | null;
-
-      if (!res.ok || !json?.ok) throw new Error("Failed");
+      if (!direct.ok) throw new Error("Failed");
       setStatus("success");
       form.reset();
     } catch {
@@ -41,7 +72,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="mx-auto mt-10 max-w-xl space-y-5">
-      {/* Honeypot */}
       <input
         type="text"
         name="_honey"

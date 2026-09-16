@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { CtaBlock } from "@/components/CtaBlock";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -7,7 +8,7 @@ import { Section } from "@/components/Section";
 import { useLocale } from "@/lib/i18n/locale-context";
 
 export function FaqContent() {
-  const { p } = useLocale();
+  const { p, locale } = useLocale();
   const c = p.faq;
   const cta = p.ctaDefaults.readyStart;
 
@@ -39,6 +40,20 @@ export function FaqContent() {
             </Reveal>
           ))}
         </ul>
+
+        <Reveal className="mt-12 border-t border-ink/12 pt-8">
+          <p className="max-w-xl text-[15.5px] text-ink/75">
+            <Link
+              href="/contact"
+              className="font-medium text-green underline-offset-4 hover:underline"
+            >
+              {locale === "en" ? "Get in touch" : "Neem direct contact op"}
+            </Link>
+            {locale === "en"
+              ? " if you still have a question."
+              : " als je nog een vraag hebt."}
+          </p>
+        </Reveal>
       </Section>
 
       <CtaBlock

@@ -123,6 +123,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Veilig op pad",
           text: "Vervoer in onze elektrische bus met eigen transportbox, ventilatie ook bij stilstand en GPS-tracker tijdens de wandeling.",
         },
+        {
+          n: "04",
+          title: "De wandeling in beeld",
+          text: "Na elke wandeling ontvang je het Wandelverslag met foto's en/of video's. Zo zie je hoe jouw hond zich gedraagt, ontwikkelt, reageert op de omgeving en of jouw hond de behoefte heeft gedaan.",
+        },
       ],
       instagramEyebrow: "Instagram",
       instagramTitleBefore: "De roedel",
@@ -180,7 +185,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     contact: {
       title: "Contact",
       intro:
-        "Vragen over onze wandelingen of benieuwd naar de mogelijkheden voor jouw hond? Neem direct contact op.",
+        "Neem direct contact op. Laat hier jouw vraag of opmerking achter en The Daily Pack probeert zo snel als mogelijk te reageren.",
       name: "Naam",
       email: "E-mail",
       message: "Bericht",
@@ -199,7 +204,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
   en: {
     common: {
       bookIntro: "Book an Introduction",
-      bookEigen: "Plan a Private Walk",
+      bookEigen: "Plan an Own Round",
       learnMore: "Learn more",
       developedBy: "Built by",
     },
@@ -210,7 +215,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       blog: "Blog",
       contact: "Contact",
       packRonde: "Pack Walk",
-      eigenRonde: "Private Walk",
+      eigenRonde: "Own Round",
       werkwijze: "Our approach",
       tijdenTarieven: "Times & Rates",
       packRegels: "Pack Rules",
@@ -244,6 +249,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
           n: "03",
           title: "Safe on the go",
           text: "Transport in our electric van with individual crates, ventilation even when parked, and a GPS tracker during the walk.",
+        },
+        {
+          n: "04",
+          title: "The walk in view",
+          text: "After every walk you receive the Walk Report with photos and/or videos. You see how your dog behaves, develops, responds to the environment, and whether your dog has done their business.",
         },
       ],
       instagramEyebrow: "Instagram",
@@ -291,7 +301,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           text: "Weekdays. Consistency — the same day and time every week.",
         },
         {
-          title: "Private Walk",
+          title: "Own Round",
           text: "Book flexibly when it suits you. For up to two dogs from the same address.",
         },
       ],
@@ -302,7 +312,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     contact: {
       title: "Contact",
       intro:
-        "Questions about our walks or curious about the options for your dog? Get in touch directly.",
+        "Get in touch. Leave your question or comment here and The Daily Pack will try to reply as soon as possible.",
       name: "Name",
       email: "Email",
       message: "Message",
