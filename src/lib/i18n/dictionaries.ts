@@ -97,7 +97,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       loopband: "Loopband",
     },
     home: {
-      eyebrow: "Premium Hondenservice · Amsterdam-Noord",
+      eyebrow: "Premium Hondenservice · Amsterdam",
       heroTitleBefore: "Upgrade de dag van",
       heroTitleEm: "jouw hond.",
       heroText:
@@ -224,7 +224,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       loopband: "Treadmill",
     },
     home: {
-      eyebrow: "Premium Dog Service · Amsterdam-Noord",
+      eyebrow: "Premium Dog Service · Amsterdam",
       heroTitleBefore: "Upgrade your",
       heroTitleEm: "dog's day.",
       heroText:

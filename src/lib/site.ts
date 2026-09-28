@@ -5,7 +5,7 @@ const collarBookUrl =
 export const site = {
   name: "The Daily Pack",
   shortName: "TDP",
-  tagline: "Premium hondenuitlaatservice Amsterdam-Noord",
+  tagline: "Premium hondenuitlaatservice Amsterdam",
   email: "info@thedailypack.nl",
   emailHref: "mailto:info@thedailypack.nl",
   instagram:

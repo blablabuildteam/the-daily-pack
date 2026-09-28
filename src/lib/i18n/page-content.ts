@@ -104,6 +104,7 @@ export type PageContent = {
     availabilityHeading: string;
     weekdaysHeading: string;
     weekSlots: string[];
+    areaNote: string;
     holidaysNote: string;
   };
   packRegels: {
@@ -226,9 +227,9 @@ export const pageContent: Record<Locale, PageContent> = {
     packRonde: {
       eyebrow: "Diensten",
       titleBefore: "De groepswandelservice in ",
-      titleEm: "Amsterdam-Noord.",
+      titleEm: "Amsterdam.",
       intro:
-        "Pack Ronde is de groepswandelservice van The Daily Pack in Amsterdam-Noord. Doordeweeks een vaste dag en tijd per week, opgehaald en thuisgebracht. Kleine groepen, zodat elk dier de aandacht krijgt die nodig is en verdient.",
+        "Pack Ronde is de groepswandelservice van The Daily Pack in Amsterdam (Noord, Oost en Zuid). Doordeweeks een vaste dag en tijd per week, opgehaald en thuisgebracht. Kleine groepen, zodat elk dier de aandacht krijgt die het nodig heeft en verdient.",
       dailyBuild: {
         title: "Wat is de Pack Ronde?",
         paragraphs: [
@@ -273,7 +274,7 @@ export const pageContent: Record<Locale, PageContent> = {
       titleBefore: "Een sessie ",
       titleEm: "op maat.",
       intro:
-        "Eigen Ronde is een privésessie voor één adres. Wandelen in het park of bos in de buurt van de ophaallocatie. Op afspraak en beschikbaarheid. Geen abonnement nodig.",
+        "Eigen Ronde is een privésessie voor één adres, op afspraak en beschikbaarheid. Wandelen in de buurt van het ophaaladres. Doordeweeks en in het weekend. Geen abonnement nodig.",
       fullAttention: {
         title: "Volledige aandacht, één adres",
         paragraphs: [
@@ -284,7 +285,7 @@ export const pageContent: Record<Locale, PageContent> = {
       howItLooks: {
         title: "Hoe ziet het eruit?",
         paragraphs: [
-          "Ophalen, wandelen en weer terugbrengen.",
+          "Voor de Eigen Ronde reizen we (voornamelijk) met een elektrische fiets voor maximale wendbaarheid in de stad. Jouw hond wordt opgehaald en gaat te voet mee naar het dichtstbijzijnde park of veld. Na het thuisbrengen ontvang je het Wandelverslag.",
         ],
       },
       ctaButtonLabel: "Plan een Eigen Ronde",
@@ -391,12 +392,14 @@ export const pageContent: Record<Locale, PageContent> = {
         prices: [{ label: "Eenmalig", value: "Gratis" }],
       },
       availabilityHeading: "Wanneer zijn we beschikbaar?",
-      weekdaysHeading: "Weekdagen",
+      weekdaysHeading: "Weekdagen (Pack Ronde)",
       weekSlots: [
-        "10:00–11:45 — Pack Ronde, max 4 honden",
-        "12:15–14:00 — Pack Ronde, max 4 honden",
-        "Op afspraak — Eigen Ronde of Kennismaking",
+        "Ochtendronde — ophalen vanaf 10:00, max 4 honden per begeleider (Amsterdam Noord)",
+        "Middagronde — ophalen vanaf 13:00, max 3 honden per begeleider (Maandag & Woensdag: Amsterdam Oost | Dinsdag, Donderdag & Vrijdag: Amsterdam Zuid)",
+        "Eigen Ronde of Kennismaking — op afspraak",
       ],
+      areaNote:
+        "Woon je in een wijk waar we nu nog geen vaste groepsronde rijden? Neem gerust contact op. Als de route het toelaat of er is animo in jouw buurt, kijken we direct of we een plek of route voor je kunnen creëren.",
       holidaysNote:
         "De tijden zijn streeftijden en kunnen door omstandigheden afwijken. Op officiële feestdagen is The Daily Pack gesloten, tenzij anders bepaald.",
     },
@@ -847,7 +850,7 @@ export const pageContent: Record<Locale, PageContent> = {
       items: [
         {
           q: "In welk gebied zijn jullie actief?",
-          a: "De Pack Ronde (groepswandeling) is momenteel beschikbaar in Amsterdam-Noord. De Eigen Ronde (individuele wandeling) is op aanvraag in heel Amsterdam te boeken.",
+          a: "De Pack Ronde (groepswandeling) is momenteel beschikbaar op vaste routes in Amsterdam-Noord, Oost en Zuid. Woon je in een ander gebied? Neem contact met ons op om de opties te bespreken. De Eigen Ronde (privéwandeling) is op afspraak in heel Amsterdam te boeken.",
         },
         {
           q: "Waarom is de kennismaking verplicht en wat kost dit?",
@@ -978,9 +981,9 @@ export const pageContent: Record<Locale, PageContent> = {
     packRonde: {
       eyebrow: "Services",
       titleBefore: "The group walking service in ",
-      titleEm: "Amsterdam-Noord.",
+      titleEm: "Amsterdam.",
       intro:
-        "Pack Walk is The Daily Pack's group walking service in Amsterdam-Noord. A fixed weekday and time each week, with pick-up and drop-off. Small groups, so every dog gets the attention they need and deserve.",
+        "Pack Walk is The Daily Pack's group walking service in Amsterdam (Noord, Oost and Zuid). A fixed weekday and time each week, with pick-up and drop-off. Small groups, so every dog gets the attention they need and deserve.",
       dailyBuild: {
         title: "What is Pack Walk?",
         paragraphs: [
@@ -1025,7 +1028,7 @@ export const pageContent: Record<Locale, PageContent> = {
       titleBefore: "A session ",
       titleEm: "tailored to you.",
       intro:
-        "Own Round is a private session for one address. Walking in the park or woods near the pick-up location. By appointment and availability. No subscription required.",
+        "Own Round is a private session for one address, by appointment and availability. Walking near the pick-up address. Weekdays and weekends. No subscription required.",
       fullAttention: {
         title: "Full attention, one address",
         paragraphs: [
@@ -1036,10 +1039,10 @@ export const pageContent: Record<Locale, PageContent> = {
       howItLooks: {
         title: "What does it look like?",
         paragraphs: [
-          "Pick-up, walk, and drop-off.",
+          "For Own Round we travel (mainly) by electric bike for maximum flexibility in the city. Your dog is picked up and walks with us to the nearest park or field. After drop-off you receive the Walk Report.",
         ],
       },
-      ctaButtonLabel: "Plan a Own Round",
+      ctaButtonLabel: "Plan an Own Round",
     },
     werkwijze: {
       eyebrow: "How it works",
@@ -1143,12 +1146,14 @@ export const pageContent: Record<Locale, PageContent> = {
         prices: [{ label: "One-time", value: "Free" }],
       },
       availabilityHeading: "When are we available?",
-      weekdaysHeading: "Weekdays",
+      weekdaysHeading: "Weekdays (Pack Walk)",
       weekSlots: [
-        "10:00–11:45 — Pack Walk, max 4 dogs",
-        "12:15–14:00 — Pack Walk, max 4 dogs",
-        "By appointment — Own Round or Introduction",
+        "Morning round — pick-up from 10:00, max 4 dogs per handler (Amsterdam Noord)",
+        "Afternoon round — pick-up from 13:00, max 3 dogs per handler (Monday & Wednesday: Amsterdam Oost | Tuesday, Thursday & Friday: Amsterdam Zuid)",
+        "Own Round or Introduction — by appointment",
       ],
+      areaNote:
+        "Do you live in an area where we don't yet run a fixed group round? Get in touch. If the route allows or there is interest in your neighbourhood, we'll look straight away at creating a spot or route for you.",
       holidaysNote:
         "Times are target times and may vary due to circumstances. On official public holidays The Daily Pack is closed, unless otherwise agreed.",
     },
@@ -1597,7 +1602,7 @@ export const pageContent: Record<Locale, PageContent> = {
       items: [
         {
           q: "Where do you operate?",
-          a: "The Pack Walk (group walk) is currently available in Amsterdam-Noord. The Own Round (individual walk) can be booked on request across Amsterdam.",
+          a: "The Pack Walk (group walk) is currently available on fixed routes in Amsterdam-Noord, Oost and Zuid. Live elsewhere? Get in touch to discuss the options. Own Round (private walk) can be booked by appointment across Amsterdam.",
         },
         {
           q: "Why is the introduction required and what does it cost?",
@@ -1707,7 +1712,7 @@ export const pageContent: Record<Locale, PageContent> = {
       readyEigen: {
         titleBefore: "Ready for a ",
         titleEm: "Own Round?",
-        buttonLabel: "Plan a Own Round",
+        buttonLabel: "Plan an Own Round",
       },
     },
   },

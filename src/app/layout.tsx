@@ -21,11 +21,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://thedailypack.nl"),
   title: {
-    default: `${site.name} | Hondenuitlaatservice Amsterdam-Noord`,
+    default: "Premium Honden Service Amsterdam | The Daily Pack",
     template: `%s | ${site.name}`,
   },
   description:
-    "Premium mobiele hondenuitlaatservice in Amsterdam-Noord. Wandelen én loopband in één sessie, ophalen en thuisbrengen in kleine groepen.",
+    "Premium hondenuitlaatservice in Amsterdam (Noord, Oost en Zuid). Wandelen én loopband in één sessie, ophalen en thuisbrengen in kleine groepen.",
   openGraph: {
     locale: "nl_NL",
     type: "website",

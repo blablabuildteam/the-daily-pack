@@ -50,7 +50,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-white/65">
-              Premium Hondenservice · Amsterdam-Noord
+              Premium Hondenservice · Amsterdam
             </p>
             <div className="mt-7 space-y-2.5 text-[14px]">
               <a
@@ -101,7 +101,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-4 border-t border-white/10 py-8 md:flex-row md:items-center md:justify-between">
           <p className="text-[13px] text-white/40">
-            © {new Date().getFullYear()} The Daily Pack · Amsterdam-Noord
+            © {new Date().getFullYear()} The Daily Pack · Amsterdam
           </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {footerLegal.map((item) => (

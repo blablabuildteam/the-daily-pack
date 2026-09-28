@@ -104,7 +104,12 @@ export function TijdenTarievenContent() {
               ))}
             </ul>
           </div>
-          <p className="mt-10 text-[14px] text-muted">{c.holidaysNote}</p>
+          {c.areaNote ? (
+            <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-ink/75">
+              {c.areaNote}
+            </p>
+          ) : null}
+          <p className="mt-6 text-[14px] text-muted">{c.holidaysNote}</p>
         </Reveal>
       </Section>
 
