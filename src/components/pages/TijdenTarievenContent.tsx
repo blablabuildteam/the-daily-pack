@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ContentBlock } from "@/components/ContentBlock";
 import { CtaBlock } from "@/components/CtaBlock";
 import { PageHero } from "@/components/PageHero";
@@ -112,11 +113,16 @@ export function TijdenTarievenContent() {
               </li>
             </ul>
           </div>
-          {c.areaNote ? (
-            <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-ink/75">
-              {c.areaNote}
-            </p>
-          ) : null}
+          <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-ink/75">
+            {c.areaNoteBefore}
+            <Link
+              href="/contact"
+              className="font-medium text-green underline-offset-4 hover:underline"
+            >
+              {c.areaNoteLink}
+            </Link>
+            {c.areaNoteAfter}
+          </p>
           <div className="mt-6 space-y-1 text-[14px] text-muted">
             <p>{c.holidaysNote}</p>
             <p>{c.closedNote}</p>

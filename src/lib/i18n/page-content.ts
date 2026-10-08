@@ -105,7 +105,9 @@ export type PageContent = {
     weekdaysHeading: string;
     weekRounds: { title: string; areas: string[] }[];
     appointmentSlot: string;
-    areaNote: string;
+    areaNoteBefore: string;
+    areaNoteLink: string;
+    areaNoteAfter: string;
     holidaysNote: string;
     closedNote: string;
   };
@@ -411,8 +413,11 @@ export const pageContent: Record<Locale, PageContent> = {
         },
       ],
       appointmentSlot: "Eigen Ronde of Kennismaking — op afspraak",
-      areaNote:
-        "Woon je in een wijk waar we nu nog geen vaste groepsronde rijden? Neem gerust contact op. Als de route het toelaat of er is animo in jouw buurt, kijken we direct of we een plek of route voor je kunnen creëren.",
+      areaNoteBefore:
+        "Woon je in een wijk waar we nu nog geen vaste groepsronde rijden? Neem gerust ",
+      areaNoteLink: "contact",
+      areaNoteAfter:
+        " op. Als de route het toelaat of er is animo in jouw buurt, kijken we direct of we een plek of route voor je kunnen creëren.",
       holidaysNote:
         "De tijden zijn streeftijden en kunnen door omstandigheden afwijken.",
       closedNote:
@@ -1178,8 +1183,11 @@ export const pageContent: Record<Locale, PageContent> = {
         },
       ],
       appointmentSlot: "Own Round or Introduction — by appointment",
-      areaNote:
-        "Do you live in an area where we don't yet run a fixed group round? Get in touch. If the route allows or there is interest in your neighbourhood, we'll look straight away at creating a spot or route for you.",
+      areaNoteBefore:
+        "Do you live in an area where we don't yet run a fixed group round? Please get in ",
+      areaNoteLink: "contact",
+      areaNoteAfter:
+        ". If the route allows or there is interest in your neighbourhood, we'll look straight away at creating a spot or route for you.",
       holidaysNote:
         "Times are target times and may vary due to circumstances.",
       closedNote:

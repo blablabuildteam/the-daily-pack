@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 type Props = {
   title: ReactNode;
-  intro: string;
+  intro: ReactNode;
   eyebrow?: string;
 };
 

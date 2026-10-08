@@ -11,16 +11,21 @@ export function ContactPageContent() {
 
   return (
     <>
-      <PageHero title={`${t.contact.title}.`} intro={t.contact.intro} />
+      <PageHero
+        title={`${t.contact.title}.`}
+        intro={
+          <>
+            {t.contact.intro}{" "}
+            <Link
+              href="/hoe-het-werkt/faq"
+              className="font-medium text-green underline-offset-4 hover:underline"
+            >
+              {t.contact.faqLink}
+            </Link>
+          </>
+        }
+      />
       <Section theme={2} grain>
-        <p className="mb-10 max-w-xl text-[15.5px] leading-relaxed text-ink/75">
-          <Link
-            href="/hoe-het-werkt/faq"
-            className="font-medium text-green underline-offset-4 hover:underline"
-          >
-            {t.contact.faqLink}
-          </Link>
-        </p>
         <ContactForm />
       </Section>
     </>
