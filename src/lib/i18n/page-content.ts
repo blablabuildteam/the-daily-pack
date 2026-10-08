@@ -103,9 +103,11 @@ export type PageContent = {
     };
     availabilityHeading: string;
     weekdaysHeading: string;
-    weekSlots: string[];
+    weekRounds: { title: string; areas: string[] }[];
+    appointmentSlot: string;
     areaNote: string;
     holidaysNote: string;
+    closedNote: string;
   };
   packRegels: {
     eyebrow: string;
@@ -393,15 +395,28 @@ export const pageContent: Record<Locale, PageContent> = {
       },
       availabilityHeading: "Wanneer zijn we beschikbaar?",
       weekdaysHeading: "Weekdagen (Pack Ronde)",
-      weekSlots: [
-        "Ochtendronde — ophalen vanaf 10:00, max 4 honden per begeleider (Amsterdam Noord)",
-        "Middagronde — ophalen vanaf 13:00, max 3 honden per begeleider (Maandag & Woensdag: Amsterdam Oost | Dinsdag, Donderdag & Vrijdag: Amsterdam Zuid)",
-        "Eigen Ronde of Kennismaking — op afspraak",
+      weekRounds: [
+        {
+          title:
+            "Ochtendronde — ophalen vanaf 10:00 uur (max 4 honden per begeleider)",
+          areas: ["Amsterdam Noord: Maandag t/m vrijdag"],
+        },
+        {
+          title:
+            "Middagronde — ophalen vanaf 13:00 uur (max 3 honden per begeleider)",
+          areas: [
+            "Amsterdam Oost: Maandag & Woensdag",
+            "Amsterdam Zuid: Dinsdag, Donderdag & Vrijdag",
+          ],
+        },
       ],
+      appointmentSlot: "Eigen Ronde of Kennismaking — op afspraak",
       areaNote:
         "Woon je in een wijk waar we nu nog geen vaste groepsronde rijden? Neem gerust contact op. Als de route het toelaat of er is animo in jouw buurt, kijken we direct of we een plek of route voor je kunnen creëren.",
       holidaysNote:
-        "De tijden zijn streeftijden en kunnen door omstandigheden afwijken. Op officiële feestdagen is The Daily Pack gesloten, tenzij anders bepaald.",
+        "De tijden zijn streeftijden en kunnen door omstandigheden afwijken.",
+      closedNote:
+        "Op officiële feestdagen is The Daily Pack gesloten, tenzij anders bepaald.",
     },
     packRegels: {
       eyebrow: "Hoe het werkt",
@@ -531,7 +546,7 @@ export const pageContent: Record<Locale, PageContent> = {
       },
       values: {
         company: "The Daily Pack",
-        area: "Amsterdam-Noord",
+        area: "Amsterdam",
         contactForm: "Contactformulier",
       },
     },
@@ -1147,15 +1162,28 @@ export const pageContent: Record<Locale, PageContent> = {
       },
       availabilityHeading: "When are we available?",
       weekdaysHeading: "Weekdays (Pack Walk)",
-      weekSlots: [
-        "Morning round — pick-up from 10:00, max 4 dogs per handler (Amsterdam Noord)",
-        "Afternoon round — pick-up from 13:00, max 3 dogs per handler (Monday & Wednesday: Amsterdam Oost | Tuesday, Thursday & Friday: Amsterdam Zuid)",
-        "Own Round or Introduction — by appointment",
+      weekRounds: [
+        {
+          title:
+            "Morning round — pick-up from 10:00 (max 4 dogs per handler)",
+          areas: ["Amsterdam Noord: Monday through Friday"],
+        },
+        {
+          title:
+            "Afternoon round — pick-up from 13:00 (max 3 dogs per handler)",
+          areas: [
+            "Amsterdam Oost: Monday & Wednesday",
+            "Amsterdam Zuid: Tuesday, Thursday & Friday",
+          ],
+        },
       ],
+      appointmentSlot: "Own Round or Introduction — by appointment",
       areaNote:
         "Do you live in an area where we don't yet run a fixed group round? Get in touch. If the route allows or there is interest in your neighbourhood, we'll look straight away at creating a spot or route for you.",
       holidaysNote:
-        "Times are target times and may vary due to circumstances. On official public holidays The Daily Pack is closed, unless otherwise agreed.",
+        "Times are target times and may vary due to circumstances.",
+      closedNote:
+        "On official public holidays The Daily Pack is closed, unless otherwise agreed.",
     },
     packRegels: {
       eyebrow: "How it works",
@@ -1284,7 +1312,7 @@ export const pageContent: Record<Locale, PageContent> = {
       },
       values: {
         company: "The Daily Pack",
-        area: "Amsterdam-Noord",
+        area: "Amsterdam",
         contactForm: "Contact form",
       },
     },

@@ -3,7 +3,7 @@ import { BedrijfsinformatieContent } from "@/components/pages/Bedrijfsinformatie
 
 export const metadata: Metadata = {
   title: "Bedrijfsinformatie",
-  description: "Contact- en bedrijfsgegevens van The Daily Pack Amsterdam-Noord.",
+  description: "Contact- en bedrijfsgegevens van The Daily Pack Amsterdam.",
 };
 
 export default function BedrijfsinformatiePage() {

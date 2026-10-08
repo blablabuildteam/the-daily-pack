@@ -57,6 +57,7 @@ export type Dictionary = {
   contact: {
     title: string;
     intro: string;
+    faqLink: string;
     name: string;
     email: string;
     message: string;
@@ -185,7 +186,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     contact: {
       title: "Contact",
       intro:
-        "Neem direct contact op. Laat hier jouw vraag of opmerking achter en The Daily Pack probeert zo snel als mogelijk te reageren.",
+        "Laat jouw vraag of opmerking achter en The Daily Pack probeert zo snel als mogelijk te reageren.",
+      faqLink: "Bekijk de veelgestelde vragen voor snelle antwoorden.",
       name: "Naam",
       email: "E-mail",
       message: "Bericht",
@@ -312,7 +314,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     contact: {
       title: "Contact",
       intro:
-        "Get in touch. Leave your question or comment here and The Daily Pack will try to reply as soon as possible.",
+        "Leave your question or comment and The Daily Pack will try to reply as soon as possible.",
+      faqLink: "See the FAQ for quick answers.",
       name: "Name",
       email: "Email",
       message: "Message",

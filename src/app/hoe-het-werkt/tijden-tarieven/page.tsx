@@ -4,7 +4,7 @@ import { TijdenTarievenContent } from "@/components/pages/TijdenTarievenContent"
 export const metadata: Metadata = {
   title: "Tijden & Tarieven",
   description:
-    "Prijzen en beschikbare tijden van Pack Ronde, Eigen Ronde en Kennismaking bij The Daily Pack Amsterdam-Noord.",
+    "Prijzen en beschikbare tijden van Pack Ronde, Eigen Ronde en Kennismaking bij The Daily Pack Amsterdam.",
 };
 
 export default function TijdenTarievenPage() {

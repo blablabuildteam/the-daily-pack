@@ -93,15 +93,23 @@ export function TijdenTarievenContent() {
           <h2 className="mb-8">{c.availabilityHeading}</h2>
           <div>
             <h3 className="mb-4 text-[20px]">{c.weekdaysHeading}</h3>
-            <ul className="max-w-xl space-y-3">
-              {c.weekSlots.map((slot) => (
+            <ul className="max-w-xl space-y-8">
+              {c.weekRounds.map((round) => (
                 <li
-                  key={slot}
+                  key={round.title}
                   className="border-l-2 border-green pl-4 text-[15px] text-ink/80"
                 >
-                  {slot}
+                  <p className="font-medium text-ink">{round.title}</p>
+                  <ul className="mt-2 space-y-1">
+                    {round.areas.map((area) => (
+                      <li key={area}>{area}</li>
+                    ))}
+                  </ul>
                 </li>
               ))}
+              <li className="border-l-2 border-green pl-4 text-[15px] text-ink/80">
+                {c.appointmentSlot}
+              </li>
             </ul>
           </div>
           {c.areaNote ? (
@@ -109,7 +117,10 @@ export function TijdenTarievenContent() {
               {c.areaNote}
             </p>
           ) : null}
-          <p className="mt-6 text-[14px] text-muted">{c.holidaysNote}</p>
+          <div className="mt-6 space-y-1 text-[14px] text-muted">
+            <p>{c.holidaysNote}</p>
+            <p>{c.closedNote}</p>
+          </div>
         </Reveal>
       </Section>
 
